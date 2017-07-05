@@ -1,0 +1,16 @@
+<div class="modal-header">
+    <h3 class="modal-title">
+        <span ng-bind="model.options.title"></span>
+    </h3>
+</div>
+<div class="modal-body">
+    <span ng-bind="model.options.content"></span>
+</div>
+<div class="modal-footer delete-dialog-footer">
+    <button class="btn btn_3" type="button" ng-click="model.cancel()">
+        <span ng-bind="model.options.buttonCancel"></span>
+    </button>
+    <button class="btn btn-danger" type="button" ng-click="model.ok()">
+        <span ng-bind="model.options.buttonOk"></span>
+    </button>
+</div>

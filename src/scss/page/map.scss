@@ -1,0 +1,303 @@
+.page-map {
+  .condition-panel {
+    height: 110px;
+    .row {
+      margin-top: 4px;
+    }
+    .row + .row {
+      margin-top: 4px;
+    }
+    .date {
+      height: 28px;
+    }
+    label {
+      font-size: 12px;
+      white-space: nowrap;
+    }
+    .form-control {
+      height: 28px;
+      padding: 4px
+    }
+    .btn {
+      height: 28px;
+      font-size: 12px;
+    }
+    .ui-multiselect {
+      font-size: 12px;
+    }
+  }
+  .result-panel {
+    height: 250px;
+    margin: 10px 0px;
+    .small-width {
+      width: 60px;
+    }
+    .table-result {
+      height: 250px;
+      overflow: auto;
+      .table {
+        thead {
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+  .map-window {
+    width: 100%;
+    height: 100%;
+  }
+
+  .leaflet-draw-draw-ruler {
+    background-image: url(../img/leaflet/ruler.png) !important;
+    background-size: 18px 18px !important;
+  }
+
+  .leaflet-draw-draw-text {
+    background-image: url(../img/leaflet/text.png) !important;
+    background-size: 18px 18px !important;
+  }
+  .leaflet-control-button-alarm {
+    font-size:24px;
+    text-align: center;
+  }
+
+  .leaflet-draw-toolbar-notop a:first-child {
+    border-top-right-radius: 4px;
+  }
+
+  .leaflet-draw-toolbar-nobottom a:last-child {
+    border-bottom-right-radius: 4px;
+  }
+
+  .leaflet-control-attribution.leaflet-control {
+    display: none;
+  }
+
+  .leaflet-control-container {
+    //display: none;
+    .leaflet-top.leaflet-left {
+      .leaflet-draw.leaflet-control {
+        // display: none;
+      }
+    }
+    .leaflet-sidebar {
+      z-index: 9;
+    }
+  }
+
+  .leaflet-contextmenu {
+    // width: 160px !important;
+    .leaflet-contextmenu-item {
+      &:hover {
+        cursor: pointer;
+      }
+      &.over {
+        background: #e0e0e0;
+      }
+    }
+  }
+  .nav-tab-content {
+    margin-top: 10px;
+  }
+  table {
+    td {
+      cursor: pointer;
+    }
+  }
+  .group-btn {
+    text-align: right;
+    .btn {
+      width: 80px;
+      margin-bottom: 5px;
+    }
+  }
+  .no-display {
+    display: none;
+  }
+  .nav li a {
+    padding: 5px 10px;
+  }
+  .row + .row {
+    margin-top: 0px;
+  }
+
+  .message-number {
+    color: #000;
+    position: absolute;
+    right: -2px;
+    top: -2px;
+    width: 16px;
+    height: 16px;
+    background: yellow;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .message-div-icon {
+    border-radius: 11px;
+    background: #FFFF00;
+    border: solid 1px #fff;
+    .message-number {
+      color: #000;
+      right: 0px;
+      top: 0px;
+    }
+  }
+
+  .lable-name {
+    margin-left: 20px;
+    font-size: 13px;
+    &:hover {
+      text-shadow: 0 0 1px #777;
+    }
+  }
+
+  .popup-container {
+    overflow: auto;
+    max-height: 260px;
+    width: 395px;
+    table {
+      margin-bottom: 0px;
+      tr {
+        td {
+          padding: 3px 5px;
+          word-break: break-word;
+        }
+      }
+    }
+  }
+  .leaflet-popup-content {
+    margin: 10px;
+    width: 400px !important;
+    .popup-container {
+      width: 100% !important;
+    }
+  }
+  .progress-cursor {
+    cursor: progress;
+  }
+  .leaflet-control-command-interior {
+    display: table;
+    color: #2F5597;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 5px 10px;
+    border-radius: 10px;
+    .loading-text {
+      display: table-cell;
+      padding: 5px;
+      vertical-align: middle;;
+    }
+  }
+  .no-display {
+    display: none;
+  }
+
+}
+
+.docker-container {
+  position: absolute;
+  height: 100%;
+  left: 0px;
+  right: 0px;
+}
+
+.leaflet-marker-pane > .miji-div-icon, .leaflet-marker-pane > .uti-div-icon, .leaflet-marker-pane > .uti-triangle-icon {
+  -webkit-transition: transform .2s linear;
+  -moz-transition: transform .2s linear;
+  -o-transition: transform .2s linear;
+  -ms-transition: transform .2s linear;
+  transition: transform .2s linear;
+}
+
+.leaflet-control-draw-ruler {
+  background: url('../img/leaflet/ruler.png');
+  background-size: 18px 18px;
+}
+
+.leaflet-control.enabled a {
+  background-color: yellow;
+}
+
+.leaflet-popup-content {
+  .button-active {
+    background: #000;
+    border-color: #000;
+    color: #fff;
+  }
+  .bold {
+    font-weight: bold;
+  }
+  .italic {
+    font-style: italic;
+  }
+  .underline {
+    text-decoration: underline;
+  }
+
+  .form-control {
+    height: 28px;
+    padding: 4px
+  }
+  .btn {
+    height: 28px;
+    font-size: 12px;
+  }
+  textarea.form-control {
+    height: auto;
+  }
+  .form-group {
+    margin-bottom: 5px;
+  }
+  .sp-replacer {
+    padding: 3px;
+    .sp-preview {
+      border: none;
+    }
+  }
+  .col {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .text-style-bar {
+    width: 100%;
+    height: 28px;
+    .form-control {
+      border-radius: 4px !important;
+    }
+  }
+  .text-control-bar {
+    width: 100%;
+    height: 28px;
+    .form-control {
+      border-radius: 4px !important;
+    }
+  }
+  .sp-replacer {
+    border-radius: 4px;
+    border: solid 1px #ccc;
+  }
+}
+
+#mapPreview {
+  display: block;
+  width: 100%;
+  height: 400px;
+}
+.map-preview {
+
+  .leaflet-control-command-interior {
+    display: table;
+    color: #2F5597;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 5px 10px;
+    border-radius: 10px;
+    .loading-text {
+      display: table-cell;
+      padding: 5px;
+      vertical-align: middle;;
+    }
+  }
+  .no-display {
+    display: none;
+  }
+}

@@ -1,0 +1,16 @@
+<div class="upload-progress">
+    <div class="modal-body">
+        <ul>
+            <p class="file-name">Uploading</p>
+            <uib-progressbar
+                    class="progress-striped active"
+                    value="vm.percentage"
+                    type="success"><span ng-bind="vm.percentage.toFixed(0)+'%'"></span>
+            </uib-progressbar>
+        </ul>
+    </div>
+    <!--<div class="modal-footer">-->
+        <!--<button class="btn btn-danger" type="button" ng-click="vm.close(true)"><i class="fa fa-times"></i> Cancel-->
+        <!--</button>-->
+    <!--</div>-->
+</div>

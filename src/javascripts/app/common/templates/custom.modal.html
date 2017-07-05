@@ -1,0 +1,28 @@
+<div class="modal-header custom-modal">
+  <button type="button" class="close" ng-click="vm.close()" data-dismiss="modal" aria-label="Close"><span
+    aria-hidden="true">&times;</span></button>
+  <h4 class="modal-title" ng-class="vm.options.classTilte" ng-bind="vm.options.title"></h4>
+</div>
+<div class="modal-body document-edit-modal">
+  <div class="confirm-modal text-center">
+    <div class="row">
+      <div class="col-md-12 content" ng-bind="vm.options.message">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 pull-right" ng-show="!vm.options.yesNo">
+        <button ng-click="vm.close()" class="btn btn-default">
+          <i class="fa fa-check"></i> Close
+        </button>
+      </div>
+      <div class="col-md-12 pull-right" ng-show="vm.options.yesNo">
+        <button ng-click="vm.ok()" class="btn btn-primary">
+          <i class="fa fa-check"></i> Yes
+        </button>
+        <button ng-click="vm.close()" class="btn btn-default">
+          <i class="fa fa-times"></i> No
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

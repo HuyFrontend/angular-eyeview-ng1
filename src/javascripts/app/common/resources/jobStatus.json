@@ -1,0 +1,11 @@
+{
+  "NOT_UPLOAD": 0,
+  "UPLOADING": 1,
+  "VALIDATING": 2,
+  "PASS_VALIDATE": 3,
+  "FAIL_VALIDATE": 4,
+  "PROCESSING": 5,
+  "SUCCESS": 6,
+  "FAILED": 7,
+  "RE_UPLOADING": 8
+}

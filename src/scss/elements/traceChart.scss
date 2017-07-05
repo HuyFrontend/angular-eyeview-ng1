@@ -1,0 +1,73 @@
+.trace-chart {
+  .trace-chart-container {
+    #trace-chart {
+      overflow: hidden;
+      path {
+        stroke: steelblue;
+        stroke-width: 1;
+        fill: none;
+      }
+    }
+
+    .axis path,
+    .axis line {
+      fill: none;
+      stroke: grey;
+      stroke-width: 1;
+      shape-rendering: crispEdges;
+    }
+
+    .drone-info {
+      float: left;
+      margin-top: 20px;
+      width: calc(50% - 10px);
+      padding: 0 10px 0 0;
+      .header {
+        text-align: center;
+        border: solid 1px #ccc;
+        margin-bottom: -1px;
+        padding: 3px;
+        font-size: 12px;
+        font-weight: bold;
+        background: #e5e5e5;
+      }
+      table {
+        width: 100%;
+        td, th {
+          border: solid 1px #ccc;
+          padding: 3px;
+        }
+      }
+
+      &:nth-child(2n + 1) {
+        clear: left;
+      }
+    }
+  }
+  .drone-map {
+    margin-top: 20px;
+    height: 350px;
+    .leaflet-control-additionalInfo {
+      width: 150px;
+      background: rgba(255, 255, 255, 0.5);
+      padding: 0 10px;
+      .additionalInfo-container-row {
+        display: table;
+        width: 100%;
+        .additionalInfo-label {
+          display: table-cell;
+          width: 50px;
+          font-weight: bold;
+          color: #0000FF;
+          font-size: 11px;
+        }
+        .additionalInfo-value {
+          display: table-cell;
+          color: #0000FF;
+          font-size: 11px;
+        }
+      }
+    }
+  }
+}
+

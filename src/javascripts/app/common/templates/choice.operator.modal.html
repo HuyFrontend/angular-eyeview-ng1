@@ -1,0 +1,43 @@
+<div class="modal-header custom-modal">
+    <h4 class="modal-title">Info</h4>
+</div>
+<div class="modal-body document-edit-modal">
+    <div class="confirm-modal text-center" ng-if="vm.availableOperator.length">
+        <div class="row">
+            <div class="col-md-12 content">
+                Please Choice Your Current Working Operator.
+            </div>
+        </div>
+        <div class="row" ng-form="vm.selectLibrary">
+            <div class="col-md-9">
+                <select class="form-control" name="operator" ng-model="vm.selectedOperator" required
+                        ng-options="opt.operatorId as opt.operatorName for opt in vm.availableOperator">
+                    <option value="" disabled="disabled">-- Select --</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-primary" type="submit"  ng-click="vm.selectOperator()" ng-disabled="vm.selectLibrary.$invalid">Select Operator
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-right">
+                <a href="javascript:void(0)" class="text-muted btn" ng-click="vm.logout()">Signin with difference
+                    account</a>
+            </div>
+        </div>
+    </div>
+    <div class="confirm-modal text-center" ng-if="!vm.availableOperator.length">
+        <div class="row">
+            <div class="col-md-12 content">
+                You have no operator currently.
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-right">
+                <a href="javascript:void(0)" class="text-muted btn" ng-click="vm.logout()">Signin with difference
+                    account</a>
+            </div>
+        </div>
+    </div>
+</div>

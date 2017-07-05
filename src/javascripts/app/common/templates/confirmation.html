@@ -1,0 +1,23 @@
+<div class="modal-header document-edit-modal">
+  <button type="button" class="close" ng-click="vm.close()" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <h4 class="modal-title">Confirm</h4>
+</div>
+<div class="modal-body document-edit-modal">
+  <div class="confirm-modal text-center">
+    <div class="row">
+      <div class="col-md-12">
+        {{vm.confirmMessage}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <button ng-click="vm.ok()" class="btn btn-primary">
+          <i class="fa fa-check"></i> Yes
+        </button>
+        <button class="btn btn-default" ng-click="vm.close()">
+          <i class="fa fa-ban"></i> No
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

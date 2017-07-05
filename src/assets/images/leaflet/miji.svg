@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500">
+<circle fill="#00008B" cx="250" cy="250" r="249"/>
+
+ <text x="250" y="380" style="fill: #fff; stroke: none; font-size: 400px; text-anchor: middle">M</text>
+</svg>

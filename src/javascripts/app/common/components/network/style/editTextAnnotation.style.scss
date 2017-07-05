@@ -1,0 +1,63 @@
+.editTextAnnotation {
+  .editTextAnnotationViewer {
+    width: 98%;
+    resize: none;
+    margin-bottom: 0;
+  }
+  .textStylingButtons {
+    ul {
+      margin: 0 0 3px 0;
+      padding: 0;
+      list-style: none;
+      li {
+        display: inline-block;
+        margin-right: 6px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      &.textStylingButtons_line2 {
+        .boxborder {
+          button{
+            border: 2px solid #ccc;
+            width: 9px;
+            text-indent: -9999px;
+            background: none;
+            outline: none;
+            &:hover{
+              opacity: 0.7;
+            }
+          }
+        }
+      }
+    }
+
+    .textStylingButtons_line2 {
+
+    }
+
+    .color-picker {
+      display: inline-block;
+    }
+
+    button {
+      padding: 3px 10px;
+      outline: none;
+      &.active{
+        background-color: #ccc;
+        border: solid 2px #b7b7b7;
+      }
+    }
+
+    .sp-light {
+      margin-right: 3px;
+      padding: 3px 3px 0px 3px;
+      .sp-preview {
+        width: 18px;
+        height: 17px;
+        margin-right: 3px;
+      }
+    }
+  }
+}

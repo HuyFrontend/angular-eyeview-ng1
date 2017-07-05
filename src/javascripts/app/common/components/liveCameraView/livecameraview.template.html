@@ -1,0 +1,62 @@
+<style>
+  #live-camera .small-frame {
+    height: 93px;
+    border: solid 1px #888;
+    display: flex;
+    align-items: center;
+    color: #777;
+    justify-content: center;
+    margin-bottom: 4px;
+    position: relative
+  }
+
+  #live-camera .small-frame .small-frame-video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0
+  }
+
+  #live-camera .small-frame .frame-status {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0
+  }
+
+  #live-camera .small-frame .frame-status .glyphicon {
+    opacity: 1;
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+  }
+
+  #live-camera .small-frame .frame-status .glyphicon.loading {
+    animation: spin 2s linear infinite;
+  }
+
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+<div id='live-camera'>
+  <div class="small-frame">
+    <video id="video-{{cameraID}}" class="small-frame-video"></video>
+    <div class='frame-status'>
+      <i ng-show="statusFrame==='PAUSE'" class='glyphicon glyphicon-pause fa-2x'></i>
+      <i ng-show="statusFrame==='ERROR'" class='glyphicon glyphicon-ban-circle'></i>
+      <i ng-show="statusFrame==='LOADING'" class='glyphicon glyphicon glyphicon-refresh loading'></i>
+    </div>
+  </div>
+  <div style="font-size: medium">{{cameraName}}</div>
+</div>

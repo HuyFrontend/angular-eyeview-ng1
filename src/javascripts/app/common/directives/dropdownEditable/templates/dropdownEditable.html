@@ -1,0 +1,66 @@
+<div class="btn-group dropdown-editable" uib-dropdown is-open="vm.isopen" auto-close="{{vm.autoClose}}">
+    <button type="button" class="btn btn-default dropdown-editable-button" uib-dropdown-toggle>
+        <span ng-if="!vm.model || vm.model === ''">-- Select --</span>
+        <span ng-if="vm.model && vm.model !== ''">
+            <span ng-if="item[vm.fieldValue] === vm.model" ng-repeat="item in vm.list"
+                  ng-bind="item[vm.fieldName]"></span>
+        </span>
+        <span class="caret"></span>
+    </button>
+    <div class="dropdown-editable-list" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+        <ul>
+            <li ng-class="{'active' : !vm.model || vm.model === ''}" role="menuitem">
+                <a href="javascript: void(0)" ng-click="vm.choosed('')" disabled="disabled">
+                    <span>-- Select --</span>
+                </a>
+            </li>
+            <li ng-class="{'active' : item[vm.fieldValue] === vm.model}" role="menuitem"
+                ng-repeat="item in vm.list" ng-if="!item.isDeleted && (vm.options.filterKey ? item[vm.options.filterKey] : true)">
+                <a href="javascript: void(0)" ng-click="vm.choosed(item)">
+                    <span ng-bind="item[vm.fieldName]" ng-if="!item.isEdit"></span>
+                    <a class="remove-item" ng-click="vm.removeItem(item)"
+                       ng-if="vm.remove && !vm.nopermission">&times;</a>
+                    <a class="edit-item" ng-click="vm.editItem(item)"
+                       ng-if="!item.isEdit && vm.edit && !vm.nopermission"><i
+                            class="fa fa-pencil"></i></a>
+                </a>
+            </li>
+        </ul>
+        <div class="divider"></div>
+        <div class="dropdown-editable-control" ng-form="vm.frmDropdown" ng-if="vm.options.distinct" isolate-form="">
+            <input type="text" class="form-control" ng-model="vm.dropdown.value" ng-disabled="vm.isLoading"
+                   name="value" maxlength="450"
+                   distinct="vm.list" distinct-options="vm.distinctOptions"/>
+            <ng-messages ng-if="vm.frmDropdown.value.$dirty || vm.frmDropdown.$submitted"
+                         for="vm.frmDropdown.value.$error">
+                    <span class="m-b-none text-danger" ng-message
+                          when="distinct">This name is already existed.</span>
+            </ng-messages>
+            <img class="loader-editable" src="/assets/svg/ajax-loader.svg" ng-if="vm.isLoading">
+            <button class="btn btn-primary" type="button" ng-click="vm.addList(vm.dropdown.value)"
+                    ng-disabled="vm.isLoading || !vm.dropdown.value || vm.frmDropdown.$invalid"
+                    ng-if="!vm.nopermission">Add
+            </button>
+            <div uib-tooltip="Please contact your administrator to configure states"
+                 tooltip-placement="auto bottom-left" tooltip-class="tooltip-position">
+                <button class="btn btn-primary" type="button" ng-disabled="vm.nopermission" ng-if="vm.nopermission">
+                    Add
+                </button>
+            </div>
+        </div>
+        <div class="dropdown-editable-control" ng-if="!vm.options.distinct">
+            <input type="text" maxlength="450" class="form-control" ng-model="vm.dropdown.value"
+                   ng-disabled="vm.isLoading"/>
+            <img class="loader-editable" src="/assets/svg/ajax-loader.svg" ng-if="vm.isLoading">
+            <button class="btn btn-primary" type="button" ng-click="vm.addList(vm.dropdown.value)"
+                    ng-disabled="vm.isLoading || !vm.dropdown.value" ng-if="!vm.nopermission">Add
+            </button>
+            <div uib-tooltip="Please contact your administrator to configure states"
+                 tooltip-placement="auto bottom-left" tooltip-class="tooltip-position">
+                <button class="btn btn-primary" type="button" ng-disabled="vm.nopermission" ng-if="vm.nopermission">
+                    Add
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

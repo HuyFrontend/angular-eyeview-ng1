@@ -1,0 +1,45 @@
+/* Ng Table*/
+@import '~ng-table/dist/ng-table';
+
+.page-link:focus, .page-link:hover {
+  border-color: #4c7ff0;
+}
+
+[ng-table-pagination] {
+  clear: both;
+  overflow: hidden;
+}
+
+// Animate.css
+@import '~animate.css/animate.css';
+
+@import './nvd3/scss/nv.d3';
+
+// ngPromiseButton
+@import './ngPromiseButton/ngPromiseButton.style';
+
+/* leaflet*/
+@import './leaflet/scss/leaflet.filter.style';
+@import './leaflet/scss/leaflet.legend.style';
+@import './leaflet/scss/leaflet.search.style';
+@import './leaflet/scss/leaflet.treeview.style';
+@import './leaflet/scss/leaflet.connection.style';
+@import './leaflet/scss/leaflet.draw.style';
+@import './leaflet/scss/leaflet.popup.style';
+@import './leaflet/scss/leaflet.uti.style';
+@import './leaflet/scss/leaflet.button.style';
+@import './leaflet/scss/leaflet.alarm.control.style';
+@import './leaflet/scss/leaflet.geotag-photo.style';
+
+/* loaders.css */
+@import '~loaders.css/loaders.css';
+
+/*ui-select*/
+@import '~ui-select/dist/select.css';
+@import '~select2/select2.css';
+@import './ui-select/ui-select-fix';
+@import '~selectize/dist/css/selectize.default.css';
+
+/* Textangular */
+@import 'textAngular/textAngular';
+

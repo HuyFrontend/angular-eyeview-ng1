@@ -1,0 +1,91 @@
+﻿﻿<table class="table spread-sheet" ng-class="{unsortable: !vm.options.sort.enabled}">
+    <thead class="spread-sheet-header">
+    <tr>
+        <th class="header-table" ng-if="vm.options.expandable"></th>
+        <th class="header-table" ng-repeat="header in vm.headers track by $index"
+            ng-click="vm.options.sort.enabled && vm.changeSorting(header)">
+            <strong ng-bind="::header"></strong>
+            <i class="fa fa-angle-up" title="Ascending"
+               ng-show="vm.options.sort.field==header && vm.options.sort.asc"></i>
+            <i class="fa fa-angle-down" title="Descending"
+               ng-show="vm.options.sort.field==header && !vm.options.sort.asc"></i>
+        </th>
+        <th class="text-right" ng-if="vm.showDeleteButton"></th>
+    </tr>
+    </thead>
+    <tbody class="spread-sheet-body" ng-if="vm.options.filter.enabled || !vm.items.length">
+    <tr ng-if="vm.options.filter.enabled && !vm.options.filter.keyword">
+        <!-- ng-if="$index >= ((vm.pageIndex - 1) * vm.pageSize) && $index < (vm.pageIndex * vm.pageSize)"> -->
+        <td ng-if="vm.options.expandable"></td>
+        <td ng-repeat="header in vm.headers track by $index">
+            <input class="form-control mw-50" ng-model="vm.options.filter.fields[vm.keys[$index]]" maxlength="450"
+                   ng-model-options="{debounce: { 'default': 500} }"
+                   ng-if="vm.isFilterable(header)"
+                   ng-change="vm.filterItem(vm.items, vm.options.filter.fields, vm.sorting)">
+        </td>
+        <td ng-if="vm.showDeleteButton">
+
+        </td>
+    </tr>
+    <tr ng-if="vm.options.filter.enabled && vm.options.filter.keyword">
+        <td colspan="{{vm.headers.length + vm.showDeleteButton+ vm.options.expandable}}">
+            <input class="form-control mw-50" ng-model="vm.options.filter.field.keyword" maxlength="450"
+                   ng-model-options="{debounce: { 'default': 500} }"
+                   placeholder="Enter keyword to search"
+                   ng-change="vm.filterItem(vm.items, vm.options.filter.field, vm.sorting)">
+        </td>
+    </tr>
+    <tr ng-show="!vm.items.length">
+        <td colspan="{{vm.headers.length + +vm.showDeleteButton+vm.options.expandable}}">
+            <em>No Results</em>
+        </td>
+    </tr>
+    </tbody>
+
+    <tbody class="spreadsheet-tbody" ng-repeat="item in vm.items">
+    <tr ng-class="{pointer: vm.options.expandable&& vm.options.canExpand(item) }"
+        ng-click="vm.options.expandable && vm.options.canExpand(item) && (item.isExpanded = !item.isExpanded) && vm.options.onSelectRow(item)">
+        <!-- ng-if="$index >= ((vm.pageIndex - 1) * vm.pageSize) && $index < (vm.pageIndex * vm.pageSize)"> -->
+        <td ng-if="vm.options.expandable">
+            <i class="fa fa-chevron-right" ng-if=" vm.options.canExpand(item) && !item.isExpanded"></i>
+            <i class="fa fa-chevron-down" ng-if=" vm.options.canExpand(item) && item.isExpanded"></i>
+        </td>
+        <td ng-repeat="header in vm.headers track by $index">
+            <label ng-if="!vm.isEdited" ng-bind="item[vm.keys[$index]]"></label>
+            <spread-sheet-cell ng-if="vm.isEdited" item="item[vm.keys[$index]]"></spread-sheet-cell>
+        </td>
+        <td class="text-right" ng-if="vm.showDeleteButton">
+            <button class="btn btn-xs btn-danger" ng-click="vm.delete(item)"><i class="fa fa-trash"></i> Remove</button>
+        </td>
+    </tr>
+    <tr ng-if="item.isExpanded" onclick="return false;">
+        <td colspan="{{1+vm.headers.length+(vm.showDeleteButton && 1)}}">
+            <div class="sub-table">
+                <table class="table spread-sheet unsortable">
+                    <thead class="spread-sheet-header">
+                    <tr>
+                        <th class="header-table" ng-repeat="header in item.subItems.columns">
+                            <strong ng-bind="header"></strong>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody class="spread-sheet-body">
+                    <tr ng-show="!item.subItems.list.length">
+                        <td colspan="{{item.subItems.columns.length}}">
+                            <em>No Results</em>
+                        </td>
+                    </tr>
+                    <tr ng-repeat="sub in item.subItems.list">
+                        <!-- ng-if="$index >= ((vm.pageIndex - 1) * vm.pageSize) && $index < (vm.pageIndex * vm.pageSize)"> -->
+                        <td ng-repeat="header in item.subItems.columns">
+                            <label ng-bind="sub[header]"></label>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+
+</table>

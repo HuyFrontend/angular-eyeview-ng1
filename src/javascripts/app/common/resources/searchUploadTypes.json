@@ -1,0 +1,14 @@
+{
+  "ALL": {
+    "value": 0,
+    "name": "All"
+  },
+  "ADD": {
+    "value": 1,
+    "name": "Add"
+  },
+  "UPDATE": {
+    "value": 2,
+    "name": "Update"
+  }
+}

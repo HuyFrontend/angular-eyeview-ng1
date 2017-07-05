@@ -1,0 +1,6 @@
+{
+  "NOT_IMPORTED": 0,
+  "IMPORTING": 1,
+  "IMPORTED": 2,
+  "FAILED": 3
+}

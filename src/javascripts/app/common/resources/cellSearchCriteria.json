@@ -1,0 +1,34 @@
+{
+  "ALL": {
+    "displayValue": "All",
+    "value": null
+  },
+  "BTS_NAME": {
+    "displayValue": "BTS Name",
+    "value": "1"
+  },
+  "TECHNOLOGY": {
+    "displayValue": "Technology",
+    "value": "2"
+  },
+  "SECTOR": {
+    "displayValue": "Sector",
+    "value": "3"
+  },
+  "AZIMUTH": {
+    "displayValue": "Azimuth",
+    "value": "4"
+  },
+  "CELL_NAME": {
+    "displayValue": "Cell Name",
+    "value": "5"
+  },
+  "ANTENNATYPE": {
+    "displayValue": "Antenna Type",
+    "value": "6"
+  },
+  "FREQUENCYTECHNOLOGYBAND": {
+    "displayValue": "Frequency Technology Band",
+    "value": "7"
+  }
+}

@@ -1,0 +1,89 @@
+#cctv-search-panel {
+  .cctv-search {
+    padding:5px;
+  }
+  .cctv-search-content {
+    padding: 5px;
+    div.cctv-item {
+      cursor: pointer;
+      padding: 5px 3px;
+      .name-point {
+        display: block;
+        font-weight: bold;
+      }
+      .address-point {
+        display: block;
+        font-size: 12px;
+        margin-left: 3px;
+      }
+      hr {
+        margin: 5px;
+      }
+    }
+  }
+  .cctv-search-bottom {
+    position: absolute;
+    bottom: 0px;
+    padding: 5px 25px;
+  }
+}
+
+.bootsidemenu {
+  right:0px;
+  width:240px !important;
+  z-index: 999999;
+  position: fixed;
+  top: -1px;
+  bottom: -1px;
+  padding: 0;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, .15);
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+  min-width: unset;
+  > .menu-wrapper {
+    padding: 0;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    overflow: auto;
+    width: 100%;
+  }
+  > .row {
+    margin: 0;
+  }
+}
+.bootsidemenu.bootsidemenu-right {
+  left: auto;
+  margin-top: 152px;
+}
+.toggler {
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, .15);
+  width: 20px;
+  height: 48px;
+  position: absolute;
+  top: 47%;
+  cursor: pointer;
+  background-color: #fff;
+}
+.bootsidemenu-right {
+  > .toggler {
+    -webkit-border-top-left-radius: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    -moz-border-radius-topleft: 4px;
+    -moz-border-radius-bottomleft: 4px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-right: 1px solid #fff;
+    -webkit-box-shadow: -1px 0px 8px rgba(0, 0, 0, .175);
+    box-shadow: -1px 0px 8px rgba(0, 0, 0, .175);
+    left: -20px;
+    > span {
+      margin: 15px 2px;
+    }
+  }
+}

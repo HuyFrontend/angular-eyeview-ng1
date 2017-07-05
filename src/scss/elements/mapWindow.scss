@@ -1,0 +1,22 @@
+map-window {
+  #site_map {
+    width: 100%;
+    height: 100%;
+    position: static !important;
+    .div-icon.uti-icon {
+      background-color: #ED7D31;
+    }
+    .div-icon.miji-icon{
+      background-color: #2F5597;
+    }
+  }
+}
+.trace-description {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

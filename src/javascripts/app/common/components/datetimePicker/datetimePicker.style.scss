@@ -1,0 +1,33 @@
+@import '~clockpicker/dist/jquery-clockpicker.css';
+
+datetime-picker {
+  .datetime-picker {
+    > div {
+      float: left;
+      position: relative;
+      &.date-picker {
+        width: 60%;
+      }
+      &.clock-picker {
+        width: 40%;
+      }
+
+      .addon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 7px 14px;
+        border-left: solid 1px #ddd;
+      }
+    }
+
+    &.no-time{
+      > div {
+        &.date-picker {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+

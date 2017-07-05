@@ -1,0 +1,37 @@
+.legend-block {
+  height: 465px;
+  overflow: auto;
+  .box-container {
+    cursor: pointer;
+    height: 25px;
+    width: 100%;
+    display: block;
+    margin-left: 0;
+    font-size: 11px;
+    &.disabled {
+      .box-color {
+        font-size: 11px;
+        color: #ccc !important;
+        &.no-bg {
+          background: transparent;
+        }
+      }
+    }
+    .box-color {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin: 5px;
+      position: relative;
+      float: left;
+      &.no-bg {
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        user-select: none;
+      }
+      &:not(.no-bg) {
+        top:2px;
+      }
+    }
+  }
+}

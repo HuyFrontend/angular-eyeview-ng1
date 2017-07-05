@@ -1,0 +1,30 @@
+<div class="popup-container">
+    <table class="table">
+        <tbody>
+            <!-- <tr>
+                <td class="info" width="50%">BTS Name</td>
+                <td ng-bind="radial.direct.cellInfo['BTS Name']"></td>
+            </tr>
+            <tr>
+                <td class="info" width="50%">Technology</td>
+                <td ng-bind="radial.direct.cellInfo.Technology"></td>
+            </tr>
+            <tr>
+                <td class="info" width="50%">Frequency technology band</td>
+                <td ng-bind="radial.direct.cellInfo['Frequency technology band']"></td>
+            </tr>
+            <tr>
+                <td class="info" width="50%">Sector</td>
+                <td ng-bind="radial.direct.cellInfo.Sector"></td>
+            </tr>
+            <tr>
+                <td class="info" width="50%">Azimuth</td>
+                <td ng-bind="radial.direct.Azimuth"></td>
+            </tr> -->
+            <tr ng-repeat="(key, value) in radial.direct.cellInfo" ng-if="['Total', 'Id', '_id', 'tempid', 'libraryid', 'active'].indexOf(key) === -1">
+                <td class="info" width="50%">{{key}}</td>
+                <td ng-bind="value"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

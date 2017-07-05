@@ -1,0 +1,12 @@
+{
+
+  "USER": {
+    "name": "User",
+    "displayName": "User"
+  },
+  "SUPER_ADMINISTRATOR": {
+    "name": "SuperAdministrator",
+    "displayName": "Super Administrator"
+  }
+
+}

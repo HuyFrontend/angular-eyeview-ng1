@@ -1,0 +1,31 @@
+<!--<div class="top-alert alert alert-success" upgrade-account-message>-->
+<!--You need to <a href="javascript:void(0)" ng-click="vm.purchase()">Purchase a package</a> to upgrade your account to-->
+<!--Administrator.-->
+<!--</div>-->
+<!--<div class="top-alert alert alert-success" upgrade-account-successful-message>-->
+<!--<button type="button" class="close" data-dismiss="alert" aria-label="Close" ng-click="closeAlert()"><span-->
+<!--aria-hidden="true"><i class="fa fa-times"></i></span></button>-->
+<!--Your account has been successfully upgraded.-->
+<!--</div>-->
+<!--<div class="top-alert alert alert-warning" status-information>-->
+<!--<button type="button" class="close" data-dismiss="alert" aria-label="Close" ng-click="closeAlert()"><span-->
+<!--aria-hidden="true"><i class="fa fa-times"></i></span></button>-->
+<!--Your data is processing...-->
+<!--</div>-->
+<top-alert></top-alert>
+<div id="page_wrapper">
+    <!-- header -->
+    <my-navbar></my-navbar>
+    <!-- / header -->
+
+    <!-- breadcrumbs -->
+    <!--<div ncy-breadcrumb></div>-->
+
+    <!-- main content -->
+    <div id="main_wrapper">
+        <div class="container-fluid mainView-animate fade-in-up" ui-view="main" autoscroll="false"></div>
+    </div>
+
+    <!-- side menu -->
+    <div my-aside></div>
+</div>

@@ -1,0 +1,327 @@
+viewcamera {
+  background-color: #F1F1F1;
+  .page-view-camera {
+    padding-top: 20px;
+  }
+  .view-block {
+    background-color: white;
+  }
+  .right-panel {
+    min-height: 100px;
+  }
+
+  .video-watch-list {
+    min-height: 500px;
+    padding: 0 10px 0 10px;
+    .video-offline-list {
+      padding: 0 !important;
+      margin: 0 !important;
+      list-style: none !important;
+      .video-list-item {
+        position: relative;
+        margin-bottom: 15px;
+        .related-item-dismissable {
+          height: 100%;
+          .content-wrapper {
+            padding: 5px;
+            a {
+              padding: 0;
+            }
+            .content-link {
+              display: block;
+              text-decoration: none;
+            }
+          }
+          .title {
+            margin-right: 15px;
+          }
+        }
+        a {
+          position: relative;
+          padding: 0 5px;
+          display: block;
+          overflow: hidden;
+          color: #333;
+        }
+        .title {
+          color: #333;
+          font-size: 14px;
+          font-weight: 500;
+          display: block;
+          line-height: 1.2;
+          max-height: 3.6em;
+          margin-bottom: 2px;
+          overflow: hidden;
+          cursor: pointer;
+          cursor: hand;
+        }
+        .stat {
+          display: block;
+          line-height: 1.4em;
+          height: 1.4em;
+          white-space: nowrap;
+          color: #767676;
+          font-size: 11px;
+        }
+
+        .thumb-wrapper {
+          top: 0;
+          margin: 0 5px;
+          height: 110px;
+          border: none !important;
+          overflow: hidden;
+          a {
+            padding: 0;
+          }
+          .yt-uix-simple-thumb-wrap {
+            float: left;
+            margin: 0 8px 0 0;
+          }
+          .yt-uix-simple-thumb-related {
+            img {
+              position: relative;
+              top: 0;
+            }
+          }
+          .yt-uix-simple-thumb-wrap {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+          }
+        }
+        .video-time {
+          right: 2px;
+          margin-top: 0;
+          margin-right: 0;
+          padding: 0 4px;
+          font-weight: 500;
+          font-size: 11px;
+          background-color: #000;
+          color: #fff !important;
+          height: 14px;
+          line-height: 14px;
+          opacity: .75;
+          filter: alpha(opacity=75);
+          display: -moz-inline-stack;
+          vertical-align: top;
+          display: inline-block;
+          position: absolute;
+          right: 2px;
+          top: 90px;
+        }
+      }
+
+      .yt-uix-button {
+        display: inline-block;
+        height: 28px;
+        border: solid 1px transparent;
+        padding: 0 10px;
+        outline: 0;
+        font-weight: 500;
+        font-size: 11px;
+        text-decoration: none;
+        white-space: nowrap;
+        word-wrap: normal;
+        line-height: normal;
+        vertical-align: middle;
+        cursor: pointer;
+        border-radius: 2px;
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+      }
+    }
+    .yt-uix-expander {
+      .yt-uix-button-expander {
+      }
+    }
+    .yt-uix-button-expander {
+      display: block;
+      width: 100%;
+      text-transform: uppercase;
+      color: #767676;
+      border-top: 1px solid #e2e2e2;
+      box-shadow: none;
+    }
+  }
+
+  .yt-card.yt-card-has-padding {
+    padding: 15px;
+  }
+  yt-card {
+    margin: 0 0 10px;
+    border: 0;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  #watch-header {
+    min-height: 150px;
+    padding-bottom: 5px;
+    position: relative;
+    #watch7-headline {
+      h1 {
+        line-height: normal;
+        word-wrap: break-word;
+        font-size: 20px !important;
+        margin-top: 0 !important;
+      }
+    }
+    #watch7-user-header {
+      position: relative;
+      padding-bottom: 10px;
+      overflow: hidden;
+    }
+
+    #watch8-action-buttons {
+      position: relative;
+      padding-top: 5px;
+      border-top: 1px solid #e2e2e2;
+      #watch8-sentiment-actions {
+        float: right;
+        #watch7-views-info {
+          position: absolute;
+          bottom: 41px;
+          right: 0;
+          min-width: 160px;
+          .watch-view-count {
+            line-height: 24px;
+            max-height: 24px;
+            text-align: right;
+            font-size: 19px;
+            color: #666;
+            white-space: nowrap;
+            margin-bottom: 2px;
+          }
+        }
+        .like-button-renderer .yt-uix-button {
+          margin-right: 0;
+          padding-right: 0;
+        }
+      }
+
+      .yt-uix-button, .yt-uix-button:hover {
+        background: none;
+        border: none;
+      }
+
+      .yt-uix-tooltip {
+        display: inline-block;
+      }
+
+      .yt-uix-button-opacity {
+        opacity: .5;
+        filter: alpha(opacity=50);
+      }
+
+      .yt-uix-button-opacity,
+      .yt-uix-button-opacity:hover,
+      .yt-uix-button-dark-opacity,
+      .yt-uix-button-dark-opacity:hover {
+        box-shadow: none;
+      }
+      .yt-uix-button {
+        display: inline-block;
+        height: 28px;
+        border: solid 1px transparent;
+        padding: 0 10px;
+        outline: 0;
+        font-weight: 500;
+        font-size: 11px;
+        text-decoration: none;
+        white-space: nowrap;
+        word-wrap: normal;
+        line-height: normal;
+        vertical-align: middle;
+        cursor: pointer;
+        border-radius: 2px;
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+      }
+    }
+
+    .yt-uix-button-icon-wrapper, .yt-uix-button-has-icon.no-icon-markup:before {
+      margin-right: 6px;
+    }
+    .yt-uix-button-has-icon:before {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .like-button-renderer-like-button:before {
+      background: no-repeat
+        url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflNVER5Q.webp) -775px -112px;
+      background-size: auto;
+      width: 20px;
+      height: 20px;
+    }
+    #watch8-secondary-actions {
+      position: absolute;
+      left: 0px;
+      top: 10px !important;
+    }
+    .yt-uix-button-group {
+      display: inline-block;
+      white-space: nowrap;
+      vertical-align: middle;
+    }
+    .watch-title-container {
+      vertical-align: top;
+      display: inline-block;
+      width: 75%;
+    }
+  }
+}
+.no-records {
+  text-align: center; 
+  border: 1px solid #ccc; 
+  border-radius:5px;
+}
+.frame-camera{
+  width:170px;
+  float:left;
+  margin: 10px;
+  .frame-stream {
+    background-color: white;
+    padding-left: 0 10px 0 10px;
+    min-height:50px;
+    width:150px;
+    float:left;
+  }
+}
+.video-search-offline-box {
+  padding: 15px;
+}
+
+.dropdown.dropdown-lg .dropdown-menu {
+  margin-top: -1px;
+  padding: 6px 20px;
+}
+
+.input-group-btn .btn-group {
+  display: flex !important;
+}
+
+.btn-group .btn {
+  border-radius: 0;
+  margin-left: -1px;
+}
+
+.btn-group .btn:last-child {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.btn-group .form-horizontal .btn[type="submit"] {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.form-horizontal .form-group {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.form-group .form-control:last-child {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}

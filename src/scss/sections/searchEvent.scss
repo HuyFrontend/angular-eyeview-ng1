@@ -1,0 +1,15 @@
+.search-event {
+  .search-criteria {
+    height: 50px;
+  }
+  .table-content {
+    height: calc(100% - 60px);
+    display: block;
+  }
+  .btn-default {
+    &.active {
+      background: #50CBEB;
+      color: white;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "NOT_UPLOAD": -1,
+  "PENDING": 0,
+  "PROCESSING": 1,
+  "SUCCESS": 2,
+  "FAILED": 3
+}

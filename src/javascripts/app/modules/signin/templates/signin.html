@@ -1,0 +1,57 @@
+<div class="login_container">
+  <h3 class="sepH_c text-center">
+    <img src="/assets/images/logo-main.png">
+  </h3>
+
+  <form name="vm.frm" ng-submit="vm.sigin(vm.username, vm.password)" novalidate="" class="form-horizontal">
+    <h2 class="heading_a">Login</h2>
+     <!--email -->
+    <div class="form-group" ng-class="{'has-success':vm.frm.username.$valid && vm.frm.username.$dirty,
+    'has-error': !vm.frm.username.$valid && vm.frm.username.$dirty}">
+      <label class="col-sm-3 control-label">Email</label>
+
+      <div class="col-sm-9">
+        <input auto-focus type="text" class="form-control" placeholder="Email" ng-model="vm.username" required
+        name="username" ng-pattern="/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/">
+        <div ng-class="{'has-success': vm.frm.username.$valid && vm.frm.username.$dirty,
+        'has-error': !vm.frm.username.$valid && vm.frm.username.$dirty}" class="minH_A">
+          <span class="help-block" ng-show="vm.frm.username.$dirty && vm.frm.username.$error.required">
+          Please enter email
+          </span>
+          <span class="help-block" ng-show="vm.frm.username.$dirty && vm.frm.username.$error.pattern">
+          Email incorrect
+          </span>
+        </div>
+      </div>
+    </div>
+
+     <!--password-->
+    <div class="form-group"
+    ng-class="{'has-success':vm.frm.password.$valid && vm.frm.password.$dirty,
+    'has-error': !vm.frm.password.$valid && vm.frm.password.$dirty}">
+      <label class="col-sm-3 control-label">Password</label>
+      <div class="col-sm-9">
+        <input type="password" class="form-control" placeholder="Password" ng-model="vm.password"
+        name="password" required>
+        <div ng-class="{'has-success':vm.frm.password.$valid && vm.frm.password.$dirty,
+        'has-error': !vm.frm.password.$valid && vm.frm.password.$dirty}" class="minH_A">
+          <span class="help-block" ng-show="vm.frm.password.$dirty && vm.frm.password.$error.required">
+          Please enter a password
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sepH_a text-right"></div>
+    <div class="form-group sepH_a text-right">
+      <button type="submit" class="btn btn-lg btn-primary btn-login sepH_a"
+              ng-disabled="vm.frm.$invalid || vm.frm.$submitted">
+        <img class="loader-login" src="/assets/svg/ajax-loader-white.svg" ng-if="vm.frm.$submitted">
+        Login
+      </button>
+      <a ui-sref="page.forgotPassword" class="small">Forgot password?</a>
+    </div>
+  </form>
+</div>
+
+

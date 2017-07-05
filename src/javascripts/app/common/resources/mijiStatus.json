@@ -1,0 +1,18 @@
+[
+  {
+    "id": "Started",
+    "value": "Started"
+  },
+  {
+    "id": "Waiting Field Visit",
+    "value": "Waiting Field Visit"
+  },
+  {
+    "id": "In Hand ACMA",
+    "value": "In Hand ACMA"
+  },
+  {
+    "id": "Completed",
+    "value": "Completed"
+  }
+]

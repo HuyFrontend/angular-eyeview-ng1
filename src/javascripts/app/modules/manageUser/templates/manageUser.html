@@ -1,0 +1,192 @@
+<div class="invite-user c-page">
+  <div class="form_wrapper animated-short" id="login_form">
+    <div class="header-page job-data-bg">
+      <div class="heading_a">
+            <span class="heading_text">
+                Users
+            </span>
+      </div>
+    </div>
+    <div class="row c-page-content">
+      <div class="col-md-12">
+        <form name="vm.frm" novalidate ng-submit="vm.addUser()">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <strong>Add New User</strong>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+
+                <div class="col-md-3">
+                  <label class="req strong">First Name</label>
+                  <input type="text" class="form-control" placeholder="First Name "
+                         ng-model="vm.user.firstName" name="firstName" required/>
+                </div>
+                <div class="col-md-3">
+                  <label class="req strong">Last Name</label>
+                  <input type="text" class="form-control" placeholder="Last Name "
+                         ng-model="vm.user.lastName" name="lastName" required/>
+                </div>
+                <div class="col-md-3 async-input" uib-dropdown>
+                  <label class="req strong">Email</label>
+                  <input type="text" class="form-control" placeholder="Email" ng-model="vm.user.email"
+                         required name="email" ng-disabled="vm.frm.email.$pending"
+                         ng-pattern="$root.appConstant.regs.email"
+                         autocomplete="off" ng-model-options="{debounce: 500}"/>
+                  <img class="loader-input" src="/assets/svg/ajax-loader.svg"
+                       ng-if="vm.frm.email.$pending">
+
+                  <div ng-class="{'has-error': !vm.frm.email.$valid && vm.frm.email.$dirty}"
+                       class="minH_A">
+                      <span class="help-block text-danger"
+                            ng-show="vm.frm.email.$dirty && vm.frm.email.$error.required">
+                          Please enter a email
+                      </span>
+                    <span class="help-block text-danger" ng-show="vm.frm.email.$dirty && vm.frm.email.$error.pattern">
+                          Please enter a valid email address
+                      </span>
+                    <span class="help-block text-danger"
+                          ng-show="vm.frm.email.$dirty && !vm.frm.email.$pending && vm.frm.email.$error.emailInviteExists">
+                          Email has exists
+                      </span>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <label class="req strong">Role</label>
+                  <select class="form-control"
+                          ng-options="role.name as role.displayName for role in vm.userRoles"
+                          ng-model="vm.user.role" required>
+                    <option value="">--Select--</option>
+                  </select>
+                </div>
+                <div class="col-md-1">
+                  <label>&nbsp;</label>
+                  <button type="submit" class="btn btn-append-data"
+                          permission="SuperAdministrator"
+                          ng-disabled="vm.frm.$invalid || vm.frm.$submitted || vm.frm.$pending">
+                    <span class="append-data-icon"></span> <span class="text-data">ADD</span>
+
+                  </button>
+                  <button type="button" class="btn btn-append-data disabled"
+                          permission="User"
+                          uib-tooltip="This requires Operator Owner access level to perform">
+                    <span class="append-data-icon"></span> <span class="text-data">ADD</span>
+
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <strong>Users (<span ng-bind="vm.paging.usersList.total"></span>)</strong>
+          </div>
+          <div class="panel-body no-padder">
+            <div ng-if="!vm.invitedUsers.length" class="text-center m-t-xs m-b-xs">
+              No user was found.
+            </div>
+            <uib-accordion class="list-group list-user" close-others="true">
+              <div ng-repeat="u in vm.invitedUsers" is-disabled="true"
+                   class="list-group-item list-user">
+                <div class="user-item">
+                  <div class="user-row">
+                                    <span class="user_avatar m-r-xs">
+                                      <img user-avatar="{{u.avatarUrl}}" alt="" title="" width="48"
+                                           height="48"/>
+                                  </span>
+                    <div class="user-info">
+                      <div class="username">
+                        <span class="user-name"><strong>{{u.firstName}}</strong></span>
+                        <span class="user-name"><strong>{{u.lastName}}</strong></span>
+                      </div>
+                      <div class="email">
+                        <span class="cgray">{{u.email}}</span>
+                      </div>
+                      <div class="user-badge">
+                        <span class="label label-info" ng-if="u.isOwner">Owner</span>
+                        <span class="label label-info"
+                              ng-if="currentUserInfo.email === u.email">It's you</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="pull-right right-element button-right" ng-if="!u.isOwner && currentUserInfo.email !== u.email">
+
+                  <button type="button" class="btn btn-danger"
+                          permission="SuperAdministrator"
+                          ng-click="vm.showConfirm(u)">
+                    <i class="fa fa-trash"></i> Remove
+                  </button>
+                  <button type="button" class="btn btn-danger disabled"
+                          permission="User"  uib-tooltip="This requires Operator Owner access level to perform"
+                          ng-click="vm.showConfirm(u)">
+                    <i class="fa fa-trash"></i> Remove
+                  </button>
+                </div>
+
+                <div class="pull-right right-element" ng-if="!u.isOwner && currentUserInfo.email !== u.email">
+                  <select class="form-control" ng-change="vm.changeRole(u)"
+                          permission="SuperAdministrator"
+                          ng-options="role.name as role.displayName for role in vm.userRoles"
+                          ng-model="u.roleName" required>
+                  </select>
+                  <select class="form-control"
+                          disabled
+                          permission="User" uib-tooltip="This requires Operator Owner access level to perform"
+                          ng-options="role.name as role.displayName for role in vm.userRoles"
+                          ng-model="u.roleName" required>
+                  </select>
+                </div>
+              </div>
+            </uib-accordion>
+            <ul uib-pagination
+                template-url="pagination.html" class="pull-right"
+                boundary-links="true"
+                ng-change="vm.getUserInvited()"
+                boundary-link-numbers="true"
+                total-items="vm.paging.usersList.total"
+                ng-model="vm.paging.usersList.pageIndex"
+                items-per-page="vm.paging.usersList.pageSize"
+                ng-show="vm.paging.usersList.total>vm.paging.usersList.pageSize"
+                class="pagination-sm"
+                previous-text="&lsaquo;"
+                next-text="&rsaquo;"
+                max-size="8"
+                rotate="false"
+                force-ellipses="true"
+                first-text="&laquo;"
+                last-text="&raquo;">
+            </ul uib-pagination>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script id="pagination.html" type="text/ng-template">
+  <div class="c-pagination">
+    <ul class="pagination">
+      <span class="page-static">Page</span>
+      <li ng-if="directionLinks" class="direct-link" ng-class="{disabled: noPrevious()}">
+        <a href ng-click="selectPage(page - 1)" title="Previous Page">
+          <span class="fa fa-caret-left"></span>
+        </a>
+      </li>
+      <li class="page-number" ng-repeat="page in pages track by $index" ng-class="{active: page.active}">
+        <a href ng-click="selectPage(page.number)">
+          {{page.text}}
+        </a>
+      </li>
+      <li ng-if="directionLinks" class="direct-link" ng-class="{disabled: noNext()}"><a href
+                                                                                        ng-click="selectPage(page + 1)"
+                                                                                        title="Next Page"><span
+        class="fa fa-caret-right"></span></a></li>
+    </ul>
+  </div>
+</script>

@@ -1,0 +1,333 @@
+<style>
+  .fav-button{
+    display: inline-block;
+    height: 28px;
+    border: solid 1px transparent;
+    padding: 0 10px;
+    outline: 0;
+    font-weight: 500;
+    font-size: 11px;
+    text-decoration: none;
+    white-space: nowrap;
+    word-wrap: normal;
+    line-height: normal;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: 2px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+    background-color: transparent; !important;
+  }
+
+  .fav-button:before {
+    margin-right: 6px;
+    background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflNVER5Q.webp) -775px -112px;
+    background-size: auto;
+    width: 20px;
+    height: 20px;
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+  }
+</style>
+
+
+<div class="page-view-camera"  style="padding-top:20px;">
+
+  <div class="container-fluid trace-file">
+    <div class="row">
+      <div class="col-md-3">
+        <div style="background-color: white;padding-left:10px;padding-right:10px;min-height:150px;">
+          <video id="video1" style="width:100% !important;height:auto !important;padding-top:10px;"></video>
+            <div>
+              <span style="font-weight: bold;font-size: medium">
+              Camera 1
+              </span>
+
+            </div>
+            <div style="border-top:1px solid grey; padding-top:5px;padding-bottom:5px;">
+                <span style="">
+                  Status:
+                  <span style="color:green;font-weight: bold;">
+                    ON
+                  </span>
+
+                </span>
+                <span style="float:right;margin-top:-7px;margin-right:-15px;">
+                  <button class="fav-button">
+                  </button>
+                </span>
+            </div>
+          </div>
+
+      </div>
+      <script>
+        if(Hls.isSupported()) {
+          var video = document.getElementById('video1');
+          var hls = new Hls();
+          hls.loadSource('http://52.237.216.58:1935/live/a86908f3-c521-4c84-969d-8c6971b880c5.stream/playlist.m3u8');
+          hls.attachMedia(video);
+          hls.on(Hls.Events.MANIFEST_PARSED,function() {
+            video.play();
+          });
+        }
+      </script>
+      <div class="col-md-3">
+        <div style="background-color: white;padding-left:10px;padding-right:10px;min-height:150px;">
+          <video id="video2" style="width:100% !important;height:auto !important;padding-top:10px;"></video>
+          <div>
+              <span style="font-weight: bold;font-size: medium">
+              Camera 2
+              </span>
+
+          </div>
+          <div style="border-top:1px solid grey; padding-top:5px;padding-bottom:5px;">
+                <span style="">
+                  Status:
+                  <span style="color:green;font-weight: bold;">
+                    ON
+                  </span>
+
+                </span>
+            <span style="float:right;margin-top:-7px;margin-right:-15px;">
+                  <button class="fav-button">
+                  </button>
+                </span>
+          </div>
+        </div>
+
+      </div>
+      <script>
+        if(Hls.isSupported()) {
+          var video2 = document.getElementById('video2');
+          var hls2 = new Hls();
+          hls2.loadSource('http://52.237.216.58:1935/live/cam2.stream/playlist.m3u8');
+          hls2.attachMedia(video2);
+          hls2.on(Hls.Events.MANIFEST_PARSED,function() {
+            video2.play();
+          });
+        }
+      </script>
+      <div class="col-md-3">
+        <div style="background-color: white;padding-left:10px;padding-right:10px;min-height:150px;">
+          <video id="video3" style="width:100% !important;height:auto !important;padding-top:10px;"></video>
+          <div>
+              <span style="font-weight: bold;font-size: medium">
+              Camera 3
+              </span>
+
+          </div>
+          <div style="border-top:1px solid grey; padding-top:5px;padding-bottom:5px;">
+                <span style="">
+                  Status:
+                  <span style="color:green;font-weight: bold;">
+                    ON
+                  </span>
+
+                </span>
+            <span style="float:right;margin-top:-7px;margin-right:-15px;">
+                  <button class="fav-button">
+                  </button>
+                </span>
+          </div>
+        </div>
+
+      </div>
+      <script>
+        if(Hls.isSupported()) {
+          var video3 = document.getElementById('video3');
+          var hls3 = new Hls();
+          hls3.loadSource('http://52.237.216.58:1935/live/a86908f3-c521-4c84-969d-8c6971b880c5.stream/playlist.m3u8');
+          hls3.attachMedia(video3);
+          hls3.on(Hls.Events.MANIFEST_PARSED,function() {
+            video3.play();
+          });
+        }
+      </script>
+      <div class="col-md-3">
+        <div style="background-color: white;padding-left:10px;padding-right:10px;min-height:150px;">
+          <video id="video4" style="width:100% !important;height:auto !important;padding-top:10px;"></video>
+          <div>
+              <span style="font-weight: bold;font-size: medium">
+              Camera 4
+              </span>
+
+          </div>
+          <div style="border-top:1px solid grey; padding-top:5px;padding-bottom:5px;">
+                <span style="">
+                  Status:
+                  <span style="color:green;font-weight: bold;">
+                    ON
+                  </span>
+
+                </span>
+            <span style="float:right;margin-top:-7px;margin-right:-15px;">
+                  <button class="fav-button">
+                  </button>
+                </span>
+          </div>
+        </div>
+
+      </div>
+      <script>
+        if(Hls.isSupported()) {
+          var video4 = document.getElementById('video4');
+          var hls4 = new Hls();
+          hls4.loadSource('http://52.237.216.58:1935/live/cam2.stream/playlist.m3u8');
+          hls4.attachMedia(video4);
+          hls4.on(Hls.Events.MANIFEST_PARSED,function() {
+            video4.play();
+          });
+        }
+      </script>
+
+    </div>
+
+    <div class="row">
+      <div class="col-md-3">
+        <div style="background-color: white;padding-left:10px;padding-right:10px;min-height:150px;">
+          <video id="video5" style="width:100% !important;height:auto !important;padding-top:10px;"></video>
+          <div>
+              <span style="font-weight: bold;font-size: medium">
+              Camera 5
+              </span>
+
+          </div>
+          <div style="border-top:1px solid grey; padding-top:5px;padding-bottom:5px;">
+                <span style="">
+                  Status:
+                  <span style="color:green;font-weight: bold;">
+                    ON
+                  </span>
+
+                </span>
+            <span style="float:right;margin-top:-7px;margin-right:-15px;">
+                  <button class="fav-button">
+                  </button>
+                </span>
+          </div>
+        </div>
+
+      </div>
+      <script>
+        if(Hls.isSupported()) {
+          var video5 = document.getElementById('video5');
+          var hls5 = new Hls();
+          hls5.loadSource('http://52.237.216.58:1935/live/cam2.stream/playlist.m3u8');
+          hls5.attachMedia(video5);
+          hls5.on(Hls.Events.MANIFEST_PARSED,function() {
+            video5.play();
+          });
+        }
+      </script>
+      <div class="col-md-3">
+        <div style="background-color: white;padding-left:10px;padding-right:10px;min-height:150px;">
+          <video id="video6" style="width:100% !important;height:auto !important;padding-top:10px;"></video>
+          <div>
+              <span style="font-weight: bold;font-size: medium">
+              Camera 6
+              </span>
+
+          </div>
+          <div style="border-top:1px solid grey; padding-top:5px;padding-bottom:5px;">
+                <span style="">
+                  Status:
+                  <span style="color:green;font-weight: bold;">
+                    ON
+                  </span>
+
+                </span>
+            <span style="float:right;margin-top:-7px;margin-right:-15px;">
+                  <button class="fav-button">
+                  </button>
+                </span>
+          </div>
+        </div>
+
+      </div>
+      <script>
+        if(Hls.isSupported()) {
+          var video6 = document.getElementById('video6');
+          var hls6 = new Hls();
+          hls6.loadSource('http://52.237.216.58:1935/live/a86908f3-c521-4c84-969d-8c6971b880c5.stream/playlist.m3u8');
+          hls6.attachMedia(video6);
+          hls6.on(Hls.Events.MANIFEST_PARSED,function() {
+            video6.play();
+          });
+        }
+      </script>
+      <div class="col-md-3">
+        <div style="background-color: white;padding-left:10px;padding-right:10px;min-height:150px;">
+          <video id="video7" style="width:100% !important;height:auto !important;padding-top:10px;"></video>
+          <div>
+              <span style="font-weight: bold;font-size: medium">
+              Camera 7
+              </span>
+
+          </div>
+          <div style="border-top:1px solid grey; padding-top:5px;padding-bottom:5px;">
+                <span style="">
+                  Status:
+                  <span style="color:green;font-weight: bold;">
+                    ON
+                  </span>
+
+                </span>
+            <span style="float:right;margin-top:-7px;margin-right:-15px;">
+                  <button class="fav-button">
+                  </button>
+                </span>
+          </div>
+        </div>
+
+      </div>
+      <script>
+        if(Hls.isSupported()) {
+          var video7 = document.getElementById('video7');
+          var hls7 = new Hls();
+          hls7.loadSource('http://52.237.216.58:1935/live/cam2.stream/playlist.m3u8');
+          hls7.attachMedia(video7);
+          hls7.on(Hls.Events.MANIFEST_PARSED,function() {
+            video7.play();
+          });
+        }
+      </script>
+      <div class="col-md-3">
+        <div style="background-color: white;padding-left:10px;padding-right:10px;min-height:150px;">
+          <video id="video8" style="width:100% !important;height:auto !important;padding-top:10px;"></video>
+          <div>
+              <span style="font-weight: bold;font-size: medium">
+              Camera 8
+              </span>
+
+          </div>
+          <div style="border-top:1px solid grey; padding-top:5px;padding-bottom:5px;">
+                <span style="">
+                  Status:
+                  <span style="color:green;font-weight: bold;">
+                    ON
+                  </span>
+
+                </span>
+            <span style="float:right;margin-top:-7px;margin-right:-15px;">
+                  <button class="fav-button">
+                  </button>
+                </span>
+          </div>
+        </div>
+
+      </div>
+      <script>
+        if(Hls.isSupported()) {
+          var video8 = document.getElementById('video8');
+          var hls8 = new Hls();
+          hls8.loadSource('http://52.237.216.58:1935/live/a86908f3-c521-4c84-969d-8c6971b880c5.stream/playlist.m3u8');
+          hls8.attachMedia(video8);
+          hls8.on(Hls.Events.MANIFEST_PARSED,function() {
+            video8.play();
+          });
+        }
+      </script>
+
+    </div>
+  </div>
+</div>

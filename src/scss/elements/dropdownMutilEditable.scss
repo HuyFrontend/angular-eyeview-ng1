@@ -1,0 +1,39 @@
+.k-multiselect{
+    border-radius: 0;
+    .k-multiselect-wrap{
+      border-radius: 0;
+      .k-input{
+        color: #bbbbbb;
+      }
+      li{
+        margin: 5px 0 3px 4px;
+        padding: 1px 18px 1px 5px;
+        font-size: 12px;
+        line-height: 1.5;
+        border-radius: 3px;
+        background-color: #ffffff;
+        .k-select{
+          .k-i-close{
+            background-position: -48px -18px;
+          }
+        }
+      }
+    }
+  }
+
+.k-list-container{
+  background: #ffffff;
+  ul.k-list{
+    .k-state-selected{
+      background-color: #428bca;
+      border-color: #ffffff
+    }
+    .k-state-hover{
+      background-color: #f5f5f5;
+      border-color: #ffffff
+    }
+    .k-state-focused{
+      border-color: #ffffff
+    }
+  }
+}

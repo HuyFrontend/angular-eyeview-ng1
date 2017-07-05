@@ -1,0 +1,46 @@
+<!-- main menu -->
+<nav id="main_menu">
+   <div>
+      <ul>
+         <li class="first_level header-icon">
+            <span class="first_level_icon">
+            <img src="/assets/images/logo_header.png" alt="" class="logo-header">
+            <img src="/assets/images/logo.png" alt="" class="logo-only">
+            </span>
+            <span class="menu-title"></span>
+         </li>
+      </ul>
+   </div>
+   <div class="menu_wrapper" expand-menu malihu-scroll-bar="aside" malihu-scroll-bar-options="vm.scrollOptions">
+      <ul>
+         <li class="first_level" ui-sref-active="section_active">
+            <a ui-sref="app.home">
+            <span class="first_level_icon network_menu"></span>
+            <span class="menu-title">Network Map</span>
+            </a>
+         </li>
+         <!--<li class="first_level" ui-sref-active="section_active">-->
+         <!--<a ui-sref="app.watchlist">-->
+         <!--<span class="first_level_icon watchlist_menu"></span>-->
+         <!--<span class="menu-title">Watch List</span>-->
+         <!--</a>-->
+         <!--</li>-->
+         <!--<li class="first_level" ui-sref-active="section_active" permission="SuperAdministrator">-->
+         <!--<a ui-sref="app.manageUser">-->
+         <!--<span class="users_menu first_level_icon"></span>-->
+         <!--<span class="menu-title">User Management</span>-->
+         <!--</a>-->
+         <!--</li>-->
+         <!--<li class="first_level" ui-sref-active="section_active" permission="SuperAdministrator">-->
+         <!--<a ui-sref="app.manageCamera">-->
+         <!--<span class="managedata_menu first_level_icon"></span>-->
+         <!--<span class="menu-title">Camera Management</span>-->
+         <!--</a>-->
+         <!--</li>-->
+      </ul>
+      <!--<treeview class="custom-aside">-->
+      <!--</treeview>-->
+      <!--<div class="custom-aside" ui-view="aside"></div>-->
+   </div>
+   <menu-toggle></menu-toggle>
+</nav>

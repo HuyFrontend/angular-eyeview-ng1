@@ -1,0 +1,207 @@
+.upload-data-page {
+  .checkbox-label {
+    position: relative;
+    display: inline-block;
+    top: 2px;
+    left: 5px;
+  }
+  .spread-sheet {
+    .spread-sheet-body {
+      td {
+        label {
+          white-space: nowrap;
+        }
+      }
+    }
+    .header-table {
+      cursor: pointer;
+      white-space: nowrap;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    &.unsortable {
+      .header-table {
+        pointer-events: none;
+        .fa {
+          visibility: hidden;
+        }
+      }
+    }
+  }
+  .scroll-table {
+    overflow: auto;
+    display: block;
+  }
+}
+
+.manage-data-confirm-modal {
+  .modal-header {
+    padding: 12px 20px 0 45px;
+    height: 62px;
+    color: #fff;
+    background: #28b1fc; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, #28b1fc, #3a7eea); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #28b1fc, #3a7eea); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #28b1fc, #3a7eea); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #28b1fc, #3a7eea); /* Standard syntax */
+    font-weight: bold;
+    font-size: 24px;
+    .close {
+      background: #fff;
+      text-shadow: none;
+      opacity: 1;
+      border-radius: 50%;
+      width: 18px;
+      height: 18px;
+      font-size: 14px;
+      color: #74a7f1;
+      position: relative;
+      top: 10px;
+    }
+  }
+  .modal-body {
+    padding: 15px 20px;
+    .label-instruction {
+      font-size: 14px;
+    }
+    .confirm-modal{
+      .btn-remove-all {
+        background: #de4d3a;
+        color: #fff;
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      .btn-cancel {
+        background: #d0d0d0;
+        color: #7c7c7c;
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .confirm-data-table {
+    margin-top: 0;
+    .tables-area {
+      padding: 0 5px;
+    }
+    .table-data {
+      padding: 0 10px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      th, td {
+        white-space: nowrap;
+      }
+      table {
+        margin-bottom: 0;
+        border: 1px solid #e6e6e6;
+      }
+    }
+    thead {
+      tr {
+        height: 43px;
+        background: #18bfd0;
+        th {
+          vertical-align: middle;
+          color: #fff;
+          font-size: 14px;
+          font-weight: bold;
+        }
+      }
+    }
+    tbody {
+      tr {
+        height: 30px;
+      }
+      td {
+        padding: 0;
+        .icheckbox_square-blue {
+          top: 0;
+        }
+        label {
+          margin: 0;
+          padding-top: 6px;
+          padding-left: 8px;
+        }
+      }
+
+      .spreadsheet-tbody:nth-child(odd) {
+        &, tr {
+          background: #f4f4f4;
+        }
+      }
+      .spreadsheet-tbody:nth-child(even) {
+        &, tr {
+          background: #fff;
+        }
+      }
+      .info-icon {
+        background: url(/assets/images/info-icon.png) !important;
+        background-repeat: no-repeat;
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+      }
+      .trash-icon {
+        background: url(/assets/images/trash-icon.png) !important;
+        background-repeat: no-repeat;
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+      }
+      .edit-icon {
+        background: url(/assets/images/edit-icon.png) !important;
+        background-repeat: no-repeat;
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+      }
+    }
+  }
+  .error-message-icon {
+    display: inline-block;
+    vertical-align: middle;
+    background: #f1cf80;
+  }
+  .error-area {
+    margin-top: 30px;
+    .header-error {
+      margin-bottom: 5px;
+      .error-marker {
+        display: inline-block;
+        background: url(/assets/images/error_mark.png);
+        background-repeat: no-repeat;
+        width: 23px;
+        height: 23px;
+      }
+      .error-header {
+        color: #eaad59;
+        font-size: 14px;
+        font-weight: bold;
+        position: relative;
+        top: -4px;
+      }
+    }
+  }
+  .btn-commit {
+    background: #46ac2a;
+    color: #fff;
+    font-weight: bold;
+    font-size: 12px;
+  }
+  .btn-cancel-commit {
+    background: #d0d0d0;
+    color: #7c7c7c;
+    font-weight: bold;
+    font-size: 12px;
+  }
+  .commit-button-icon {
+    background: url(/assets/images/commit.png);
+    width: 18px;
+    height: 12px;
+    display: inline-block;
+  }
+}

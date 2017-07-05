@@ -1,0 +1,59 @@
+
+.user-management {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  tr.midle {
+    td {
+      vertical-align: middle !important;
+      .btn {
+        padding: 2px 5px;
+        .fa {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .loader {
+    width: 25px;
+  }
+  .pagination {
+    float: right;
+  }
+
+  table {
+    tr {
+      td {
+        word-break: break-word;
+      }
+    }
+  }
+  .user-management-tabs {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 100px);
+    .tab-content {
+      height: calc(100% - 75px);
+      .tab-pane {
+        height: 100%;
+      }
+    }
+  }
+  .footer {
+    position: relative;
+  }
+}
+#userDetailGridContainer {
+  height: 100%;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+}
+#usersGridContainer {
+  height: calc(100% - 55px);
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+}

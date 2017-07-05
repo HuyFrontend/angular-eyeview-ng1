@@ -1,0 +1,66 @@
+
+.title-show {
+  display: inline !important;
+}
+
+.side_menu_active #main_menu {
+
+  .filterTitle {
+    margin: 10px 0 0 15px;
+  }
+
+  .filterItem {
+    padding-left: 15px;
+    list-style: none;
+    margin-top: 5px;
+  }
+
+  .filterItem li {
+    margin-bottom: 8px;
+  }
+
+  .filterTitle input, .filterItem input {
+    margin: 0px;
+  }
+
+  .filter-button {
+    margin-right: 15px;
+    margin-top: 4px;
+  }
+
+  .custom-size {
+    font-size: 12px;
+  }
+
+  .filter-menu {
+    .icheckbox_square-blue {
+      width: 14px;
+      height: 14px;
+      background-position: 0 0;
+      background-size: 145px;
+    }
+    .icheckbox_square-blue.checked {
+      background-position: -30px 0;
+    }
+    .icheckbox_square-blue.hover:not(.checked) {
+      background-position: -15px 0;
+    }
+    .panel-group .panel .panel-heading .panel-title a:after {
+      top: 13px;
+    }
+  }
+
+  background: #394f63;
+
+  .header-icon {
+    background-color: #21324f;
+    min-height: 92px;
+    img {
+      padding: 18px 0 23px 17px !important;
+      &.logo-only {
+        padding: 25px 0 17px 20px !important;
+        width: 67%;
+      }
+    }
+  }
+}

@@ -1,0 +1,110 @@
+.dropdown-editable {
+  width: 100%;
+  .dropdown-editable-button {
+    width: 100%;
+    text-align: left;
+    position: relative;
+    border-radius: 0;
+    min-height: 33px;
+    span > span {
+      overflow: hidden;
+      display: block;
+      margin-right: 10px;
+    }
+    .caret {
+      position: absolute;
+      right: 10px;
+      top: 13px;
+    }
+  }
+  div.dropdown-editable-list {
+    width: 100%;
+    padding-top: 0;
+    ul {
+      min-height: 135px;
+      max-height: 170px;
+      overflow: auto;
+      list-style: none;
+      padding: 0 5px;
+      margin-bottom: 0;
+      li {
+        &:hover {
+          a {
+            &.remove-item {
+              background: transparent;
+              display: block;
+            }
+            &.edit-item {
+              background: transparent;
+              display: block;
+            }
+          }
+        }
+        padding: 2px 0;
+        position: relative;
+        a {
+          padding: 2px 5px;
+          display: block;
+          color: #2e2e2e;
+          font-size: 14px;
+          &.remove-item {
+            position: absolute;
+            right: 0px;
+            top: -5px;
+            color: #ccc !important;
+            font-size: 20px !important;
+            display: none;
+          }
+          &.edit-item {
+            position: absolute;
+            right: 15px;
+            top: 0px;
+            color: #ccc !important;
+            font-size: 13px !important;
+            display: none;
+          }
+        }
+        a:hover {
+          background: #f5f5f5;
+          border-radius: 2px;
+        }
+      }
+      li.active {
+        a {
+          background: #428bca;
+          color: #ffffff;
+          border-radius: 2px;
+        }
+      }
+    }
+    div.divider {
+      margin-top: 0;
+    }
+  }
+  .dropdown-editable-control {
+    position: relative;
+    padding: 0 60px 0 5px;
+    .btn {
+      position: absolute;
+      right: 5px;
+      top: 0;
+    }
+    .loader-editable {
+      position: absolute;
+      right: 60px;
+      width: 15px;
+      top: 10px;
+    }
+    .tooltip-position {
+      top: 38px !important;
+      right: 5px !important;
+      left: auto !important;
+    }
+    .form-control{
+      border: 1px solid #ccc !important;
+    }
+    .text-danger {
+      font-size: 12px;
+    }
+  }
+}

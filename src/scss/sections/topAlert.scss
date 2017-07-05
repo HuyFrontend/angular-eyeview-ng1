@@ -1,0 +1,40 @@
+.top-alert {
+  display: none;
+}
+body.has-top-alert {
+  #page_wrapper {
+    padding-top: $top-alert-height;
+
+    #main_header {
+      top: $top-alert-height;
+    }
+
+    #main_wrapper {
+      top: 92+$top-alert-height;
+    }
+
+    #main_menu {
+      top: $top-alert-height;
+    }
+  }
+
+  .top-alert {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $top-alert-height;
+    line-height: $top-alert-height;
+    z-index: 99;
+    text-align: center;
+    padding: 0;
+    background: #e27533 !important;
+    > button {
+      line-height: $top-alert-height;
+      margin: 0 10px;
+      user-select: none;
+      outline: none;
+    }
+  }
+}

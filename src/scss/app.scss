@@ -1,0 +1,87 @@
+// Font-awesome
+$fa-font-path: '../assets/fonts';
+@import '~font-awesome/scss/font-awesome';
+
+// ElegantIcons
+@import '~elegant-icons/style.css';
+
+// Glyphicons
+$glyphicons-halflings-font-path: "../assets/fonts";
+@import './fonts/glyphicons-halflings/glyphicons-halflings';
+
+@import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+// 3rd-plugin
+@import '~spectrum-colorpicker/spectrum.css';
+
+// Angular modules
+//@import "../bower_components/AngularJS-Toaster/toaster.css";
+@import '~angularjs-toaster/toaster';
+@import '~malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css';
+@import '~angular-loading-bar/build/loading-bar.css';
+@import '~ng-table/dist/ng-table.css';
+@import '~angular-wizard/dist/angular-wizard.css';
+@import "~angular-ui-tab-scroll/angular-ui-tab-scroll.css";
+@import '~golden-layout/src/css/goldenlayout-base.css';
+@import '~golden-layout/src/css/goldenlayout-light-theme.css';
+@import "~dygraphs/dist/dygraph.css";
+@import "~leaflet-geotag-photo/dist/Leaflet.GeotagPhoto.css";
+// Leaflet
+@import '~leaflet/dist/leaflet.css';
+@import '~leaflet-draw/dist/leaflet.draw.css';
+@import '~leaflet-contextmenu/dist/leaflet.contextmenu.css';
+@import '~leaflet-label/dist/leaflet.label.css';
+@import '~leaflet.markercluster/dist/MarkerCluster.Default.css';
+@import '~leaflet-sidebar/src/L.Control.Sidebar.css';
+@import '~leaflet-pulse-icon/src/L.Icon.Pulse.css';
+
+//@import '../bower_components/angular.treeview/css/angular.treeview.css';
+
+// Site style
+@import "./variables";
+
+@import "./utilities";
+
+@import "./style";
+
+@import "./../javascripts/app/vendors/index";
+
+@import "./rewrite";
+
+@import "./custom";
+
+// Elements
+@import "./elements/ajaxLoading.scss";
+@import "./elements/dropdownEditable.scss";
+@import "./elements/mapWindow.scss";
+@import "./elements/editor.scss";
+@import "./elements/dropzone.scss";
+@import "./elements/autoComplete";
+@import "./elements/dropdownMutilEditable";
+@import "./elements/spreadSheet.scss";
+@import "./elements/deleteDialog.scss";
+@import "./elements/traceChart.scss";
+
+// Components
+@import "./../javascripts/app/common/components/index";
+
+// Section
+@import "./sections/uploadBox.scss";
+@import "./sections/attachmentList.scss";
+@import "./sections/topAlert.scss";
+@import "./sections/chartLegend.scss";
+@import "./sections/uploadProgress.scss";
+@import "./sections/searchEvent.scss";
+
+// Page
+@import "./page/map.scss";
+@import "./page/signin.scss";
+@import "./page/profile.scss";
+@import "./page/signup.scss";
+@import "./page/aside.scss";
+@import "./page/bootSideMenu.scss";
+@import "./page/uploadData.scss";
+@import "./page/report.scss";
+@import "./page/userManagement.scss";
+@import "./page/wizard.scss";
+@import "./material/bootstrap-material-datetimepicker.css";

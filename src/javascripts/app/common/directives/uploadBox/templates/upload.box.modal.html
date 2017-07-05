@@ -1,0 +1,30 @@
+<!--<div class="modal-header">-->
+    <!--<h3 class="modal-title">I'm a modal!</h3>-->
+<!--</div>-->
+<div class="modal-body">
+    <div class="attachment">
+        <upload-box upload-files="vm.files" is-uploading="vm.isUploading" multiple="vm.multiple" file-types="vm.fileTypes" max-size="vm.maxSize"></upload-box>
+        <ul class="attachment-list">
+            <li class="item" ng-repeat="file in vm.files">
+                <div class="progress-background" ng-class="{'completed': file.completed}" ng-style="{'width': file.progress + '%'}"></div>
+                <a ng-href="{{file.filePath}}" download>
+                    <img ng-src="{{file.extension | fileTypeExt}}" alt=""
+                         class="m-r-xs fileicon"/><span ng-bind="file.fileName"></span>
+                </a>
+                <button class="btn btn-clear btn-remove-attachment btn-icon" ng-click="$event.stopPropagation(); file.remove()">
+                    <i class="fa fa-times"></i>
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-disabled="vm.isUploading()" ng-click="vm.ok()">
+        <i class="fa fa-check"></i>
+        OK
+    </button>
+    <button class="btn btn-default" type="button" ng-click="vm.cancel()">
+        <i class="fa fa-times"></i>
+        Cancel
+    </button>
+</div>

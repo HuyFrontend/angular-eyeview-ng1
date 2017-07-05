@@ -1,0 +1,39 @@
+.login_register_form {
+  .form_wrapper {
+    .input-group {
+      .input-group-addon {
+        height: 23px;
+        .icon_profile, .icon_key_alt {
+          display: block;
+          margin-top: 2px;
+        }
+      }
+    }
+    .minH_A {
+      .help-block {
+        margin-bottom: 5px;
+        margin-top: 0;
+      }
+    }
+    .sepH_c {
+      .loader-login {
+        width: 20px;
+        position: relative;
+        top: -1px;
+      }
+    }
+  }
+  h3.sepH_c {
+    .name {
+      display: block;
+      color: #0098a9;
+      font-weight: bold;
+      font-size: 34px;
+    }
+    .desc {
+      display: block;
+      color: #00858a;
+      font-size: 18px;
+    }
+  }
+}

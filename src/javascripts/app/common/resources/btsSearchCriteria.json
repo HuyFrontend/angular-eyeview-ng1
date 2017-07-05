@@ -1,0 +1,22 @@
+{
+  "ALL": {
+    "displayValue": "All",
+    "value": null
+  },
+  "BTS_NAME": {
+    "displayValue": "BTS Name",
+    "value": "1"
+  },
+  "CARRIER": {
+    "displayValue": "Carrier",
+    "value": "2"
+  },
+  "NETWORK": {
+    "displayValue": "Network Name",
+    "value": "3"
+  },
+  "SITE_ID": {
+    "displayValue": "Site Id",
+    "value": "4"
+  }
+}

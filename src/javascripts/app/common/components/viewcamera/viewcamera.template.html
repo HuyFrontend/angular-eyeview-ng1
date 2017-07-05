@@ -1,0 +1,168 @@
+<overlay-loader name="{{$ctrl._overlayLoaderName}}"></overlay-loader>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="page-view-camera">
+  <div class="container-fluid trace-file">
+    <div class="row">
+      <div class="col-md-9 ">
+        <div class="text-center view-block">
+          <div ng-show='modeDisplay.listCamera'>
+            <div class="listLiveStreamVideo">
+              <div ng-repeat="(index, camera) in listCamera track by $index" class="frame-camera">
+                <div class="frame-stream">
+                  <live-camera-view ng-click="selectLiveCamHandle(camera)" name="{{camera.cameraName}}" id="{{camera.cameraId}}" streamingUrl="{{urlPlay}}" url="{{camera.liveStreamUrl}}"></live-camera-view>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hls-video streaming-src="{{urlPlay}}" height="400" width="750"></hls-video>
+        </div>
+        <div class="view-block" style="margin-top:10px;">
+          <div ng-show="!isCameraStreaming" id="watch-header" class="yt-card yt-card-has-padding">
+            <div id="watch7-headline" class="clearfix">
+              <div id="watch-headline-title">
+                <h1 class="watch-title-container">
+                  <span id="eow-title" class="watch-title" dir="ltr">
+                  {{currentRecord.name}}
+                  </span>
+                </h1>
+              </div>
+            </div>
+          </div>
+          <div ng-show="isCameraStreaming" id="watch-header" class="yt-card yt-card-has-padding">
+            <div id="watch7-headline" class="clearfix">
+              <div id="watch-headline-title">
+                <h1 class="watch-title-container">
+                  <span id="eow-title" class="watch-title" dir="ltr">
+                  {{currentCamera.cameraName}}
+                  </span>
+                </h1>
+              </div>
+            </div>
+            <div id="watch7-user-header" class=" spf-link ">
+              <div class="yt-user-info">
+                <span class="g-hovercard yt-uix-sessionlink
+                  spf-link ">{{model.address}}</span>
+              </div>
+            </div>
+            <div id="watch8-action-buttons" class="watch-action-buttons clearfix">
+              <div id="watch8-secondary-actions">
+                <div class="yt-uix-menu yt-uix-videoactionmenu ">
+                  <span class="yt-uix-button-content">IP address: {{currentCamera.ipAddress}}</span>
+                </div>
+              </div>
+              <div id="watch8-sentiment-actions">
+                <div id="watch7-views-info">
+                  <div class="watch-view-count">Status: ON</div>
+                </div>
+                <span class="like-button-renderer actionable ">
+                <span>
+                <button
+                  class="yt-uix-button yt-uix-button-size-default yt-uix-button-opacity yt-uix-button-has-icon no-icon-markup like-button-renderer-like-button like-button-renderer-like-button-unclicked  yt-uix-post-anchor yt-uix-tooltip" type="button" onclick=";return false;"
+                  data-position="bottomright" data-force-position="true"
+                  data-orientation="vertical">
+                </button>
+                </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div ng-show='modeDisplay.listRecord' class="col-md-3 col-sep">
+        <div class="view-block right-panel">
+          <div class="video-search-offline-box">
+            <div class="input-group" id="adv-search">
+              <input type="text" class="form-control" placeholder="Search by name" ng-model="searchName" />
+              <div class="input-group-btn">
+                <div class="btn-group" role="group">
+                  <a class="btn btn-default" data-toggle="collapse" href="#advanceSearchPanel" aria-expanded="false" aria-controls="advanceSearchPanel">
+                  <span class="glyphicon glyphicon-calendar"></span>
+                  </a>
+                  <button type="button" class="btn btn-primary" ng-click="searchVideoRecord()"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                </div>
+              </div>
+            </div>
+            <div id="advanceSearchPanel" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+              <div class="panel-body">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="date-start" placeholder="Start Date" ng-model="startDate" />
+                  <div class="input-group-btn">
+                    <div class="btn-group" role="group">
+                      <button type="button" class="btn btn-danger" id="btn-startdate"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="input-group" style="padding-top: 5px">
+                  <input type="text" class="form-control" id="date-end" placeholder="End Date" ng-model="endDate" />
+                  <div class="input-group-btn">
+                    <div class="btn-group" role="group">
+                      <button type="button" class="btn btn-danger" id="btn-enddate"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="video-watch-list">
+            <div class="no-records" ng-if="isRecord">
+              <span class="glyphicon glyphicon-facetime-video fa-5x" style="color: #777"></span>
+              <div>No records found </div>
+            </div>
+            <ul class="video-offline-list">
+              <li ng-repeat="record in listCameraRecord track by $index" class="video-list-item related-list-item related-list-item-compact-video">
+                <div ng-click="selectRecordedVideoHandle(record)" class="related-item-dismissable">
+                  <div class="thumb-wrapper contains-percent-duration-watched">
+                    <a class="thumb-link spf-link yt-uix-sessionlink spf-link" aria-hidden="true">
+                    <span class="yt-uix-simple-thumb-wrap yt-uix-simple-thumb-related" tabindex="0" data-vid="-dNp7DQJMP8">
+                    <img style="top: 0px" src="{{record.thumbnailUrl}}" aria-hidden="true" alt="">
+                    <span class="video-time">{{record.duration}}</span></span></a>
+                  </div>
+                  <div class="content-wrapper">
+                    <a class=" content-link spf-link  yt-uix-sessionlink  spf-link " title="{{record.name}}">
+                    <span dir="ltr" class="title" aria-describedby="description-id-680760">
+                    {{record.name}}
+                    </span>
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <button ng-show="isShowMore" ng-click="fetchMoreRecord()" class="yt-uix-button yt-uix-button-size-default yt-uix-button-expander"
+                type="button" onclick=";return false;" id="watch-more-related-button">
+              <span class="yt-uix-button-content">Show more</span>
+              </button>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $('#btn-startdate').click(function () {
+      $('#date-start').val('');
+    });
+
+    $('#btn-enddate').click(function () {
+      $('#date-end').val('');
+    });
+
+    $('#date-end').bootstrapMaterialDatePicker({
+      weekStart: 0,
+      format: 'DD/MM/YYYY HH:mm'
+    }).on('change', function (e, date) {
+      angular.element($('#date-end')).triggerHandler('input');
+    });
+
+    $('#date-start').bootstrapMaterialDatePicker({
+      weekStart: 0,
+      format: 'DD/MM/YYYY HH:mm',
+      shortTime: true
+    }).on('change', function (e, date) {
+      angular.element($('#date-start')).triggerHandler('input');
+      $('#date-end').bootstrapMaterialDatePicker('setMinDate', date);
+    });
+  })
+
+</script>

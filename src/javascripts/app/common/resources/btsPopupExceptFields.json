@@ -1,0 +1,14 @@
+[
+  "Total",
+  "Id",
+  "_id",
+  "active",
+  "location",
+  "coords",
+  "color",
+  "optionalFields",
+  "cellIndex",
+  "countCamera",
+  "type",
+  "cameraid"
+]

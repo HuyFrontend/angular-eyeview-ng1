@@ -1,0 +1,12 @@
+import angular from 'angular';
+import controller from './controllers/aside';
+import expandMenuDirective from './directives/expandMenu';
+import menuToggleDirective from './directives/menuToggle';
+import myAsideDirective from './directives/myAside';
+import angularCookies from 'angular-cookies';
+let module = angular.module('app.aside', [angularCookies]);
+module.controller('AsideController', controller);
+module.directive('expandMenu', expandMenuDirective);
+module.directive('myAside', myAsideDirective);
+module.directive('menuToggle', menuToggleDirective);
+export default module;

@@ -1,0 +1,20 @@
+[
+  "Total",
+  "Id",
+  "_id",
+  "tempid",
+  "operatorid",
+  "active",
+  "location",
+  "coords",
+  "color",
+  "optionalFields",
+  "cellid",
+  "uploadid",
+  "cellIndex",
+  "mijies",
+  "uties",
+  "totalmsg",
+  "alarms",
+  "jobid"
+]

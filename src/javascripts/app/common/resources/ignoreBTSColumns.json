@@ -1,0 +1,12 @@
+[
+  "workingid",
+  "btsid",
+  "location",
+  "operatorid",
+  "optionalFields",
+  "pendingaction",
+  "totalmsg",
+  "uploadid",
+  "ordernumber",
+  "jobid"
+]

@@ -1,0 +1,44 @@
+﻿
+.signup-page{
+  [uib-dropdown]{
+    ul[uib-dropdown-menu]{
+      width: 100%;
+      left: -1px;
+      min-height: 100px;
+      max-height: 250px;
+      overflow: auto;
+    }
+
+    .caret{
+      position: absolute;
+      top: 38px;
+      right: 10px;
+    }
+
+    input[type=text]{
+      padding-right: 25px;
+    }
+  }
+
+  .async-input{
+    .loader-input{
+      position: absolute;
+      top: 8px;
+      right: 18px;
+      width: 20px;
+      z-index: 99;
+    }
+
+    input[type=text]{
+      padding-right: 25px;
+    }
+  }
+
+  input[readonly] {
+    cursor: text;
+    opacity: 1;
+    background: white;
+  }
+}
+
+

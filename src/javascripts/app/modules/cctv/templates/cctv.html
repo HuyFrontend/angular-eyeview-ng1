@@ -1,0 +1,44 @@
+<div id="cctv-search-panel">
+  <div class="cctv-search">
+    <div class="input-group" id="adv-search">
+      <input ng-model="vm.keyword" ng-keyup="$event.keyCode == 13 && vm.submitSearch()" type="text" class="form-control" placeholder="Search by name or address"
+      />
+      <div class="input-group-btn">
+        <div class="btn-group" role="group">
+          <button ng-click="vm.closeSearch()" type="button" class="btn btn-danger">
+            <span class="glyphicon glyphicon glyphicon-remove" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cctv-search-content">
+    <div class="cctv-item" ng-repeat="point in vm.searchResult.data track by $index" ng-click="vm.focusThisPoint(point)">
+      <span class="name-point">{{point.points.pointname}}</span>
+      <span class="address-point">{{point.points.address}}</span>
+      <hr/>
+    </div>
+    <div ng-show="vm.searchResult.total > vm.searchResult.currentIndex" class="cctv-showmore">
+      <span>Showing result {{vm.startIndex}}-{{vm.endIndex}}</span>
+      <span ng-show="vm.startIndex > 1" ng-click="vm.showPrev()" class="glyphicon glyphicon-chevron-left"></span>
+      <span ng-show="vm.searchResult.total > vm.endIndex" ng-click="vm.showNext()" class="glyphicon glyphicon-chevron-right"></span>
+    </div>
+  </div>
+  <div class="cctv-search-bottom">
+    <div class="checkbox">
+      <label><input type="checkbox" ng-click="vm.toggleLocationReload()" ng-model="vm.locationReload" value="">Update result when moving map</label>
+    </div>
+  </div>
+</div>
+
+<!-- call bootsidemenu with options -->
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#cctv-search-panel').BootSideMenu({
+      side: "right",
+      duration: 500,
+      autoClose: true
+    });
+  });
+
+</script>

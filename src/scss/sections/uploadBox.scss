@@ -1,0 +1,87 @@
+.upload-box {
+  nav {
+    a {
+      display: table-cell;
+      width: 25%;
+      line-height: 20px;
+      text-align: center;
+      font-size: 12px;
+      img {
+
+      }
+      &:hover, &.active {
+
+      }
+    }
+  }
+  .uploader-content {
+    .uploader-box {
+      min-height: 150px;
+      margin-top: 20px;
+      .file-list-header {
+        margin-bottom: 10px;
+        position: relative;
+        overflow: hidden;
+        height: 35px;
+        .btn {
+          position: absolute;
+          left: 0;
+          top: 0;
+          background: none;
+          border: none;
+          &:hover {
+            background-color: #efefef;
+          }
+        }
+
+        .title {
+          text-align: center;
+          font-weight: bold;
+          line-height: 35px;
+        }
+      }
+
+      &.local-upload {
+        .drop-box {
+          text-align: center;
+          height: 150px;
+          line-height: 150px;
+          color: #999;
+          font-size: 20px;
+          border: 3px dashed #ccc;
+          &:not(.no-hover):hover {
+            cursor: pointer;
+          }
+        }
+      }
+
+      .list-group {
+        list-style: none;
+        li {
+          padding: 0;
+          &:not(.no-hover):hover {
+            background-color: #efefef;
+          }
+
+          a {
+            padding: 10px 15px;
+            display: block;
+
+            &:hover, &:visited, &:link {
+              text-decoration: none;
+            }
+
+            i.multiple-download {
+              float: right;
+              margin-top: 4px;
+            }
+            > img.fileicon {
+              position: relative;
+              top: -2px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

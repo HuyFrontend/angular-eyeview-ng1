@@ -1,0 +1,16 @@
+{
+  "BTS_NAME": "btsname",
+  "BTS_ID": "btsid",
+  "CAMERA_ID": "cameraid",
+  "POINT_ID": "pointid",
+  "AZIMUTH": "azimuth",
+  "LONGITUDE": "longitude",
+  "LATITUDE": "latitude",
+  "TECHNOLOGY": "technology",
+  "FREQUENCY_TECHNOLOGY_BAND": "frequencytechnologyband",
+  "ANTENNA_TYPE": "antennatype",
+  "ID": "id",
+  "OPTIONAL_FIELDS" : "optionalFields",
+  "TOTAL_MESSAGES" : "totalmsg",
+  "TOTAL_ALARMS": "totalAlarm"
+}

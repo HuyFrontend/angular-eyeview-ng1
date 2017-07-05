@@ -1,0 +1,142 @@
+<div ng-cloak class="upload-box">
+    <nav>
+        <a class="btn btn-block" href ng-click="vm.changeSource('local')" ng-class="{'btn-primary': vm.source==='local'}"><i
+                class="fa fa-cloud-upload"></i> From Your Computer</a>
+        <!--<a class="btn btn-block" href ng-click="vm.changeSource('dropbox')" ng-class="{'btn-primary': vm.source==='dropbox'}"><i-->
+                <!--class="fa fa-dropbox"></i> Dropbox</a>-->
+        <!--<a class="btn btn-block" href ng-click="vm.changeSource('google')" ng-class="{'btn-primary': vm.source==='google'}">Google Drive</a>-->
+        <!--<a class="btn btn-block" href ng-click="vm.changeSource('box')" ng-class="{'btn-primary': vm.source==='box'}">Box.com</a>-->
+    </nav>
+    <div class="uploader-content" ng-switch="vm.source">
+        <section class="uploader-box local-upload" ng-switch-when="local">
+            <div ngf-drop
+                 ng-model="vm.files"
+                 class="drop-box"
+                 ngf-select
+                 accept="{{vm.fileAcceptTypes}}"
+                 ngf-drag-over-class="dragover"
+                 ngf-multiple="vm.multiple"
+                 ngf-allow-dir="false">Click or Drop Document file here
+            </div>
+            <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+        </section>
+        <section class="uploader-box local-upload" ng-switch-when="dropbox">
+            <button class="btn btn-primary" ng-if="!vm.dropbox.isAuth"
+                    ng-click="vm.dropbox.connect()">Connect
+            </button>
+            <div ng-if="vm.dropbox.queries.length > 1" class="file-list-header">
+                <button class="btn btn-default" ng-click="vm.dropbox.back()"><i class="fa fa-arrow-left"></i>
+                </button>
+                <div class="title" ng-bind="vm.dropbox.currentQuery.name"></div>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="item in vm.dropbox.currentQuery.files">
+                    <a href ng-click="vm.dropbox.download(item)" ng-if="!item.isFolder">
+                        <img ng-src="{{item.ext | fileTypeExt}}" alt=""
+                             class="m-r-xs fileicon"/><span ng-bind="item.name"></span>
+                    </a>
+                    <a href ng-click="vm.dropbox.browse(item)" ng-if="item.isFolder">
+                        <img ng-src="{{item.ext | fileTypeExt}}" alt=""
+                             class="m-r-xs fileicon"/><span ng-bind="item.name"></span>
+                    </a>
+                </li>
+                <li class="text-center m-t-md m-b-md no-hover" ng-if="vm.dropbox.isLoading">
+                    Loading...
+                </li>
+                <li class="text-center m-t-md m-b-md no-hover"
+                    ng-if="!vm.dropbox.isLoading && !vm.dropbox.currentQuery.files.length && vm.dropbox.isAuth">
+                    No files
+                </li>
+                <!--<li class="m-t-md"-->
+                <!--ng-if="!vm.dropbox.isLoading && vm.dropbox.isAuth && vm.dropbox.currentQuery.isHaveMore">-->
+                <!--<button class="btn btn-primary btn-block" ng-click="vm.dropbox.loadDropBoxFiles(true)">Load-->
+                <!--more-->
+                <!--</button>-->
+                <!--</li>-->
+            </ul>
+        </section>
+        <section class="uploader-box local-upload" ng-switch-when="google">
+            <button class="btn btn-primary" ng-if="!vm.googleDrive.isAuth"
+                    ng-click="vm.googleDrive.connect() && !vm.googleDrive.isValidating">Connect
+            </button>
+            <div ng-if="vm.googleDrive.queries.length > 1" class="file-list-header">
+                <button class="btn btn-default" ng-click="vm.googleDrive.back()"><i class="fa fa-arrow-left"></i>
+                </button>
+                <div class="title" ng-bind="vm.googleDrive.currentQuery.name"></div>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="item in vm.googleDrive.currentQuery.files">
+                    <a href ng-if="item.isFolder" ng-click="vm.googleDrive.browse(item)">
+                        <img ng-src="{{item.ext | fileTypeExt}}" alt=""
+                             class="m-r-xs fileicon"/><span ng-bind="item.name"></span>
+                    </a>
+                    <a href ng-if="!item.isMultiple && !item.isFolder" ng-click="vm.googleDrive.download(item)">
+                        <img ng-src="{{item.ext | fileTypeExt}}" alt=""
+                             class="m-r-xs fileicon"/><span ng-bind="item.name"></span>
+                    </a>
+                    <div ng-if="item.isMultiple && !item.isFolder" uib-dropdown dropdown-append-to-body="true">
+                        <a href uib-dropdown-toggle>
+                            <img ng-src="{{item.ext | fileTypeExt}}" alt=""
+                                 class="m-r-xs fileicon"/><span ng-bind="item.name"></span>
+                            <i class="fa fa-link multiple-download"></i>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="split-button" uib-dropdown-menu>
+                            <li role="menuitem" ng-repeat="l in item.downloadUrls"><a href
+                                                                                      ng-click="vm.googleDrive.download(l)">Download
+                                as {{l.ext | uppercase}}</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="text-center m-t-md m-b-md no-hover" ng-if="vm.googleDrive.isLoading">
+                    Loading...
+                </li>
+                <li class="text-center m-t-md m-b-md no-hover"
+                    ng-if="!vm.googleDrive.isLoading && !vm.googleDrive.currentQuery.files.length && vm.googleDrive.isAuth && !vm.googleDrive.isValidating">
+                    No files
+                </li>
+                <li class="m-t-md no-hover"
+                    ng-if="!vm.googleDrive.isLoading && vm.googleDrive.isAuth && !vm.googleDrive.isValidating && vm.googleDrive.currentQuery.isHaveMore">
+                    <button class="btn btn-primary btn-block" ng-click="vm.googleDrive.loadGoogleDriveFiles('next')">
+                        Load
+                        more
+                    </button>
+                </li>
+            </ul>
+        </section>
+        <section class="uploader-box local-upload" ng-switch-when="box">
+            <button class="btn btn-primary" ng-if="!vm.box.isAuth"
+                    ng-click="vm.box.connect()">Connect
+            </button>
+            <div ng-if="vm.box.queries.length > 1" class="file-list-header">
+                <button class="btn btn-default" ng-click="vm.box.back()"><i class="fa fa-arrow-left"></i>
+                </button>
+                <div class="title" ng-bind="vm.box.currentQuery.name"></div>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="item in vm.box.currentQuery.files">
+                    <a href ng-click="vm.box.download(item)" ng-if="!item.isFolder">
+                        <img ng-src="{{item.ext | fileTypeExt}}" alt=""
+                             class="m-r-xs fileicon"/><span ng-bind="item.name"></span>
+                    </a>
+                    <a href ng-click="vm.box.browse(item)" ng-if="item.isFolder">
+                        <img ng-src="{{item.ext | fileTypeExt}}" alt=""
+                             class="m-r-xs fileicon"/><span ng-bind="item.name"></span>
+                    </a>
+                </li>
+                <li class="text-center m-t-md m-b-md no-hover" ng-if="vm.box.isLoading">
+                    Loading...
+                </li>
+                <li class="text-center m-t-md m-b-md no-hover"
+                    ng-if="!vm.box.isLoading && !vm.box.currentQuery.files.length && vm.box.isAuth">
+                    No files
+                </li>
+                <li class="m-t-md no-hover"
+                    ng-if="!vm.box.isLoading && vm.box.isAuth && vm.box.currentQuery.isHaveMore">
+                    <button class="btn btn-primary btn-block" ng-click="vm.box.loadBoxFiles(true)">Load
+                        more
+                    </button>
+                </li>
+            </ul>
+        </section>
+    </div>
+</div>

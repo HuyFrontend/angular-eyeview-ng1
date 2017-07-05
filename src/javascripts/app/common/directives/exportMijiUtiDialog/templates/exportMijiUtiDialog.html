@@ -1,0 +1,25 @@
+<div class="modal-header">
+    <h3 class="modal-title">
+        <span ng-bind="$ctrl.options.title"></span>
+    </h3>
+</div>
+<div class="modal-body">
+    <div>
+        <p class="export-modal">
+            <span ng-bind="$ctrl.miji.mijiName"></span>
+        </p>
+    </div>
+
+    <ol ng-if="$ctrl.uties.length" class="playlist" kendo-sortable k-placeholder="$ctrl.placeholder" k-hint="$ctrl.hint" k-end="$ctrl.dragEnd">
+        <li ng-repeat="uti in $ctrl.uties" ng-bind="uti.utiName">
+        </li>
+    </ol>
+</div>
+<div class="modal-footer delete-dialog-footer">
+    <button class="btn btn-danger" type="button" ng-click="$ctrl.cancel()">
+        <span ng-bind="$ctrl.options.buttonCancel"></span>
+    </button>
+    <button class="btn btn-info" type="button" ng-click="$ctrl.ok()">
+        <span ng-bind="$ctrl.options.buttonOk"></span>
+    </button>
+</div>

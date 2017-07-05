@@ -1,0 +1,22 @@
+{
+  "ID": "id",
+  "CELL_ID": "cellid",
+  "BTS_NAME": "btsname",
+  "BTS_ID": "btsid",
+  "DATE":"date",
+  "VSMEAN_RTWP":"vsmeanrtwp(dbm)",
+  "LULINTERFERENCE_AVG":"lulinterferenceavg(dbm)",
+  "FREQUENCY_TECHNOLOGY_BAND": "frequencytechnologyband",
+  "ANTENNA_TYPE": "antennatype",
+  "LONGITUDE": "longitude",
+  "TECHNOLOGY": "technology",
+  "TECHNOLOGY_HEADER": "Technology",
+  "CELL_NAME": "cellname",
+  "TOTAL": "total",
+  "AZIMUTH": "azimuth",
+  "LATITUDE": "latitude",
+  "LOCATION": {
+    "LATITUDE": "location.lat",
+    "LONGITUDE": "location.lon"
+  }
+}

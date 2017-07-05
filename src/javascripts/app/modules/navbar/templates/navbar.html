@@ -1,0 +1,36 @@
+<header id="main_header">
+    <div class="container-fluid header-container">
+        <div class="brand_section">
+        </div>
+        <div class="header-full-logo">
+            <img src="assets/images/logo-main.png" ui-sref="app.home" alt=""/>
+        </div>
+        <div class="header_user_actions dropdown" on-toggle="toggled(open)" uib-dropdown>
+            <div class="dropdown-toggle user_dropdown" uib-dropdown-toggle>
+                <div class="user_avatar">
+                    <img user-avatar="{{vm.info.userData.avatarUrl}}" user-id="{{vm.info.userData.id}}" alt="" title=""
+                         width="38"
+                         height="38">
+                </div>
+                <span class="header-username">
+                     <!--<strong ng-if="$root.userOperator && $root.userOperator.operatorName.length">(<span-->
+                    <!--ng-bind="$root.userOperator.operatorName"></span>) - </strong>-->
+                  <strong ng-if="vm.info.userData.firstName && vm.info.userData.lastName"
+                          ng-bind="vm.info.userData.firstName"></strong>
+                  <strong ng-if="vm.info.userData.firstName && vm.info.userData.lastName"
+                          ng-bind="vm.info.userData.lastName"></strong>
+                  <strong ng-if="!vm.info.userData.firstName || !vm.info.userData.lastName"
+                          ng-bind="vm.info.userData.email"></strong>
+                </span>
+                <span class="caret"></span>
+            </div>
+            <ul class="dropdown-menu dropdown-menu-right">
+                <!--<li><a ui-sref="app.changeOperator">Change Operator</a></li>-->
+                <li><a ui-sref="app.changePassword">Change Password</a></li>
+                <li><a href="javascript: void(0)" ng-click="vm.signout()">Log Out</a></li>
+
+            </ul>
+        </div>
+
+    </div>
+</header>

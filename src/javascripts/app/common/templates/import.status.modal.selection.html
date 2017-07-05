@@ -1,0 +1,33 @@
+<div class="modal-header custom-modal">
+    <h4 class="modal-title">Info</h4>
+</div>
+<div class="modal-body document-edit-modal">
+    <div class="confirm-modal text-center">
+        <div class="row">
+            <div class="col-md-12 content">
+                This operator is not ready for using because you or Administrator didn't upload data.
+            </div>
+        </div>
+        <div class="row" ng-form="vm.selectLibrary">
+            <div class="col-md-4">
+                <label class="control-label">Choose Another Operator</label>
+            </div>
+            <div class="col-md-5">
+                <select class="form-control" name="operator" ng-model="vm.selectedOperator" required
+                        ng-options="opt.operatorId as opt.operatorName for opt in vm.availableOperator">
+                    <option value="" disabled="disabled">-- Select --</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-primary" type="submit"  ng-click="vm.selectOperator()" ng-disabled="vm.selectLibrary.$invalid">Select Operator
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-right">
+                <a href="javascript:void(0)" class="text-muted btn" ng-click="vm.logout()">Signin with difference
+                    account</a>
+            </div>
+        </div>
+    </div>
+</div>
